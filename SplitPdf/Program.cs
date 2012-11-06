@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
@@ -11,8 +9,11 @@ namespace SplitPdf
   {
     static void Main(string[] args)
     {
-      if (args.Length != 1)
+      if (args.Length == 0)
+      {
         Console.WriteLine("You must specify the input file as a parameter!");
+        return;
+      }
       else
       {
         foreach (string file in args)
@@ -40,12 +41,9 @@ namespace SplitPdf
           string destFileNameFinal = string.Format("{0}-Page{1}of{2}{3}", destFileName, 
             i + 1, inputDocument.PageCount, destFileExtension);
           Console.WriteLine("Creating file: {0}", destFileNameFinal);
-          PdfDocument outputDocument = new PdfDocument();
-          outputDocument.Version = inputDocument.Version;
-          outputDocument.Info.Title = string.Format("Page {0} of {1}", i + 1, inputDocument.Info.Title);
-          outputDocument.Info.Creator = inputDocument.Info.Creator;
+          PdfDocument outputDocument = new PdfDocument { Version = inputDocument.Version };
           outputDocument.AddPage(inputDocument.Pages[i]);
-          outputDocument.Save(destFolder + "\\" + destFileNameFinal);
+          outputDocument.Save(String.Format("{0}\\{1}", destFolder, destFileNameFinal));
         }
       }
       catch (Exception ex)
