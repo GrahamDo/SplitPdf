@@ -13,10 +13,18 @@ namespace SplitPdf
     {
       if (args.Length != 1)
         Console.WriteLine("You must specify the input file as a parameter!");
-      else if (!File.Exists(args[0]))
-        Console.WriteLine("File not found: {0}", args[0]);
       else
-        ProcessFile(args[0]);
+      {
+        foreach (string file in args)
+          if (!File.Exists(file))
+          {
+            Console.WriteLine("File not found: {0}", args[0]);
+            return;
+          }
+      }
+
+      foreach (string file in args)
+        ProcessFile(file);
     }
 
     private static void ProcessFile(string sourceFile)
