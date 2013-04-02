@@ -31,14 +31,26 @@ namespace SplitPdf
           return;
         }
 
-        Console.WriteLine(string.Format("Generating output file {0}", outputFile));
         List<string> files = new List<string>();
         foreach (string arg in args)
         {
           if (arg.ToUpper() != "-M" && arg.ToUpper() != outputFile.ToUpper())
             files.Add(arg);
         }
-        ConcatenatePdfs(files, outputFile);
+
+        bool allFilesFound = true;
+        files.ForEach(s => 
+        {
+          if (!File.Exists(s))
+          {
+            Console.WriteLine(string.Format("File not found: {0}", s));
+            allFilesFound = false;
+            return;
+          }
+        });
+
+        if (allFilesFound)
+          ConcatenatePdfs(files, outputFile);
       }
       else
       {
@@ -57,7 +69,7 @@ namespace SplitPdf
     private static void ConcatenatePdfs(List<string> files, string outputFile)
     {
       PdfDocument outputDocument = new PdfDocument();
-      foreach (string file in files)
+      files.ForEach(file =>
       {
         Console.WriteLine(string.Format("Processing {0}", file));
         PdfDocument inputDocument = PdfReader.Open(file, PdfDocumentOpenMode.Import);
@@ -67,7 +79,7 @@ namespace SplitPdf
           PdfPage page = inputDocument.Pages[idx];
           outputDocument.AddPage(page);
         }
-      }
+      });
       Console.WriteLine(string.Format("Creating output file {0}", outputFile));
       outputDocument.Save(outputFile);
     }
