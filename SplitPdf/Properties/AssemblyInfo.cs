@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SplitPdf")]
-[assembly: AssemblyCopyright("Copyright © Graham Craig Downs 2012")]
+[assembly: AssemblyCopyright("Copyright © Graham Craig Downs 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
