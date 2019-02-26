@@ -6,14 +6,13 @@ using System.Collections.Generic;
 
 namespace SplitPdf
 {
-  class Program
+  internal class Program
   {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
       if (args.Length == 0)
       {
         Console.WriteLine("You must specify the input file as a parameter!");
-        return;
       }
       else if (args[0].ToUpper() == "-M")
       {
@@ -24,29 +23,28 @@ namespace SplitPdf
           return;
         }
 
-        string outputFile = args[args.Length - 1];
+        var outputFile = args[args.Length - 1];
         if (File.Exists(outputFile))
         {
-          Console.WriteLine(string.Format("{0} already exists! Will not overwrite it.", outputFile));
+          Console.WriteLine($"{outputFile} already exists! Will not overwrite it.");
           return;
         }
 
-        List<string> files = new List<string>();
-        foreach (string arg in args)
+        var files = new List<string>();
+        foreach (var arg in args)
         {
           if (arg.ToUpper() != "-M" && arg.ToUpper() != outputFile.ToUpper())
             files.Add(arg);
         }
 
-        bool allFilesFound = true;
+        var allFilesFound = true;
         files.ForEach(s => 
         {
-          if (!File.Exists(s))
-          {
-            Console.WriteLine(string.Format("File not found: {0}", s));
-            allFilesFound = false;
-            return;
-          }
+          if (File.Exists(s))
+              return;
+
+          Console.WriteLine($"File not found: {s}");
+          allFilesFound = false;
         });
 
         if (allFilesFound)
@@ -54,33 +52,33 @@ namespace SplitPdf
       }
       else
       {
-        foreach (string file in args)
+        foreach (var file in args)
           if (!File.Exists(file))
           {
-            Console.WriteLine("File not found: {0}", args[0]);
+            Console.WriteLine($"File not found: {args[0]}");
             return;
           }
 
-        foreach (string file in args)
+        foreach (var file in args)
           SplitFile(file);
       }
     }
 
     private static void ConcatenatePdfs(List<string> files, string outputFile)
     {
-      PdfDocument outputDocument = new PdfDocument();
+      var outputDocument = new PdfDocument();
       files.ForEach(file =>
       {
-        Console.WriteLine(string.Format("Processing {0}", file));
-        PdfDocument inputDocument = PdfReader.Open(file, PdfDocumentOpenMode.Import);
-        int count = inputDocument.PageCount;
-        for (int idx = 0; idx < count; idx++)
+        Console.WriteLine($"Processing {file}");
+        var inputDocument = PdfReader.Open(file, PdfDocumentOpenMode.Import);
+        var count = inputDocument.PageCount;
+        for (var idx = 0; idx < count; idx++)
         {
-          PdfPage page = inputDocument.Pages[idx];
+          var page = inputDocument.Pages[idx];
           outputDocument.AddPage(page);
         }
       });
-      Console.WriteLine(string.Format("Creating output file {0}", outputFile));
+      Console.WriteLine($"Creating output file {outputFile}");
       outputDocument.Save(outputFile);
     }
 
@@ -88,18 +86,17 @@ namespace SplitPdf
     {
       try
       {
-        PdfDocument inputDocument = PdfReader.Open(sourceFile, PdfDocumentOpenMode.Import);
-        string destFolder = Path.GetDirectoryName(inputDocument.FullPath);
-        string destFileName = Path.GetFileNameWithoutExtension(sourceFile);
-        string destFileExtension = Path.GetExtension(sourceFile);
-        for (int i = 0; i < inputDocument.PageCount; i++)
+        var inputDocument = PdfReader.Open(sourceFile, PdfDocumentOpenMode.Import);
+        var destFolder = Path.GetDirectoryName(inputDocument.FullPath);
+        var destFileName = Path.GetFileNameWithoutExtension(sourceFile);
+        var destFileExtension = Path.GetExtension(sourceFile);
+        for (var i = 0; i < inputDocument.PageCount; i++)
         {
-          string destFileNameFinal = string.Format("{0}-Page{1}of{2}{3}", destFileName, 
-            i + 1, inputDocument.PageCount, destFileExtension);
+          var destFileNameFinal = $"{destFileName}-Page{i + 1}of{inputDocument.PageCount}{destFileExtension}";
           Console.WriteLine("Creating file: {0}", destFileNameFinal);
-          PdfDocument outputDocument = new PdfDocument { Version = inputDocument.Version };
+          var outputDocument = new PdfDocument { Version = inputDocument.Version };
           outputDocument.AddPage(inputDocument.Pages[i]);
-          outputDocument.Save(String.Format("{0}\\{1}", destFolder, destFileNameFinal));
+          outputDocument.Save($"{destFolder}\\{destFileNameFinal}");
         }
       }
       catch (Exception ex)
