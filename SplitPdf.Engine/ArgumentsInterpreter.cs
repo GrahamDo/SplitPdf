@@ -1,4 +1,8 @@
-﻿namespace SplitPdf.Engine
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Net;
+
+namespace SplitPdf.Engine
 {
   public class ArgumentsInterpreter
   {
@@ -12,10 +16,25 @@
                                        "Merge multiple PDF files into one (creates <OutputFile> at the end):\r\n" +
                                        "\tSplitPdf.exe -m <File1> <File2> <...> <FileN> <OutputFile>";
 
+    public List<string> InputFiles { get; private set; }
+
     public void ProcessArguments(string[] arguments)
+      => ProcessArguments(arguments, false);
+    public void ProcessArguments(string[] arguments, bool bypassFileExistsCheck)
     {
       if (arguments == null || arguments.Length == 0)
-        throw new ArgumentValidationException(UsageMessage);
+        ArgumentValidationException.ThrowWithUsageMessage();
+
+      InputFiles = new List<string>();
+      // ReSharper disable once PossibleNullReferenceException
+      foreach (var argument in arguments)
+      {
+        if (!bypassFileExistsCheck)
+          if (!File.Exists(argument))
+            ArgumentValidationException.ThrowWithUsageMessage($"File not found: {argument}");
+
+        InputFiles.Add(argument);
+      }
     }
   }
 }
