@@ -4,6 +4,8 @@ Note: It was developed in Microsoft Visual Studio 2008 (although it currently ne
 
 <h3>Usage</h3>
 <ul><li>Split a single PDF file into many:<br/>
+  <code>SplitPdf.exe &lt;File&gt;</code></li>
+<li>Split multiple PDF files into many (batching):<br/>
   <code>SplitPdf.exe &lt;File1&gt; &lt;File2&gt; &lt;...&gt; &lt;FileN&gt;</code></li>
 <li>Merge multiple PDF files into one (creates &lt;OutputFile&gt; at the end):<br/>
 <code>SplitPdf.exe -m &lt;File1&gt; &lt;File2&gt; &lt;...&gt; &lt;FileN&gt; &lt;OutputFile&gt;</code></li></ul>
