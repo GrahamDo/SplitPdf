@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using System.Net;
 
 namespace SplitPdf.Engine
 {
@@ -19,8 +17,6 @@ namespace SplitPdf.Engine
     public List<string> InputFiles { get; private set; }
 
     public void ProcessArguments(string[] arguments)
-      => ProcessArguments(arguments, false);
-    public void ProcessArguments(string[] arguments, bool bypassFileExistsCheck)
     {
       if (arguments == null || arguments.Length == 0)
         ArgumentValidationException.ThrowWithUsageMessage();
@@ -29,10 +25,6 @@ namespace SplitPdf.Engine
       // ReSharper disable once PossibleNullReferenceException
       foreach (var argument in arguments)
       {
-        if (!bypassFileExistsCheck)
-          if (!File.Exists(argument))
-            ArgumentValidationException.ThrowWithUsageMessage($"File not found: {argument}");
-
         InputFiles.Add(argument);
       }
     }

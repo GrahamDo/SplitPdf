@@ -53,7 +53,7 @@ namespace SplitPdf.UnitTests
       var interpreter = new ArgumentsInterpreter();
       const string fileName = "C:\\Temp\\File.pdf";
       var args = new[] { fileName };
-      interpreter.ProcessArguments(args, true);
+      interpreter.ProcessArguments(args);
       Assert.AreEqual(1, interpreter.InputFiles.Count);
       Assert.AreEqual(interpreter.InputFiles[0], fileName);
     }
@@ -67,7 +67,7 @@ namespace SplitPdf.UnitTests
       const string fileName3 = "C:\\Temp\\File3.pdf";
 
       var args = new[] { fileName1, fileName2, fileName3 };
-      interpreter.ProcessArguments(args, true);
+      interpreter.ProcessArguments(args);
       Assert.AreEqual(3, interpreter.InputFiles.Count);
       Assert.AreEqual(interpreter.InputFiles[0], fileName1);
       Assert.AreEqual(interpreter.InputFiles[1], fileName2);
