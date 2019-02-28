@@ -42,6 +42,7 @@ namespace SplitPdf.UnitTests
       {
         expectedException = e;
       }
+
       Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
       // ReSharper disable once PossibleNullReferenceException
       Assert.AreEqual(ArgumentsInterpreter.UsageMessage, expectedException.Message);
@@ -56,13 +57,14 @@ namespace SplitPdf.UnitTests
 
       try
       {
-        var args = new [] { "-m" };
+        var args = new[] {"-m"};
         interpreter.ProcessArguments(args);
       }
       catch (ArgumentValidationException e)
       {
         expectedException = e;
       }
+
       Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
       var expectedMessage = $"Nothing to merge.\r\n\r\n{ArgumentsInterpreter.UsageMessage}";
       // ReSharper disable once PossibleNullReferenceException
@@ -78,15 +80,16 @@ namespace SplitPdf.UnitTests
 
       try
       {
-        var args = new[] { "-m", "File1" };
+        var args = new[] {"-m", "File1"};
         interpreter.ProcessArguments(args);
       }
       catch (ArgumentValidationException e)
       {
         expectedException = e;
       }
+
       Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
-      var expectedMessage = "Merge requires at least two input files and an output file.\r\n\r\n" + 
+      var expectedMessage = "Merge requires at least two input files and an output file.\r\n\r\n" +
                             ArgumentsInterpreter.UsageMessage;
       // ReSharper disable once PossibleNullReferenceException
       Assert.AreEqual(expectedMessage, expectedException.Message);
@@ -101,13 +104,14 @@ namespace SplitPdf.UnitTests
 
       try
       {
-        var args = new[] { "-m", "File1", "File2" };
+        var args = new[] {"-m", "File1", "File2"};
         interpreter.ProcessArguments(args);
       }
       catch (ArgumentValidationException e)
       {
         expectedException = e;
       }
+
       Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
       var expectedMessage = "Merge requires at least two input files and an output file.\r\n\r\n" +
                             ArgumentsInterpreter.UsageMessage;
@@ -124,13 +128,14 @@ namespace SplitPdf.UnitTests
 
       try
       {
-        var args = new[] { "-m", "File1", "File2", "File1" };
+        var args = new[] {"-m", "File1", "File2", "File1"};
         interpreter.ProcessArguments(args);
       }
       catch (ArgumentValidationException e)
       {
         expectedException = e;
       }
+
       Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
       var expectedMessage = "Merge output file cannot be the same as one of the input files.\r\n\r\n" +
                             ArgumentsInterpreter.UsageMessage;
@@ -145,7 +150,7 @@ namespace SplitPdf.UnitTests
       const string fileName1 = "File1";
       const string fileName2 = "File2";
       const string outputFileName = "Output";
-      var args = new[] { "-m", fileName1,fileName2,outputFileName };
+      var args = new[] {"-m", fileName1, fileName2, outputFileName};
       interpreter.ProcessArguments(args);
       Assert.IsTrue(interpreter.IsMergeEnabled);
       Assert.AreEqual(2, interpreter.InputFiles.Count);
@@ -159,7 +164,7 @@ namespace SplitPdf.UnitTests
     {
       var interpreter = new ArgumentsInterpreter();
       const string fileName = "C:\\Temp\\File.pdf";
-      var args = new[] { fileName };
+      var args = new[] {fileName};
       interpreter.ProcessArguments(args);
       Assert.AreEqual(1, interpreter.InputFiles.Count);
       Assert.AreEqual(interpreter.InputFiles[0], fileName);
@@ -173,12 +178,35 @@ namespace SplitPdf.UnitTests
       const string fileName2 = "C:\\Temp\\File2.pdf";
       const string fileName3 = "C:\\Temp\\File3.pdf";
 
-      var args = new[] { fileName1, fileName2, fileName3 };
+      var args = new[] {fileName1, fileName2, fileName3};
       interpreter.ProcessArguments(args);
       Assert.AreEqual(3, interpreter.InputFiles.Count);
       Assert.AreEqual(interpreter.InputFiles[0], fileName1);
       Assert.AreEqual(interpreter.InputFiles[1], fileName2);
       Assert.AreEqual(interpreter.InputFiles[2], fileName3);
+    }
+
+    [TestMethod]
+    public void ProcessArguments_PassDuplicateFileNamesWithoutMerge_Should_ThrowException()
+    {
+      ArgumentValidationException expectedException = null;
+
+      var interpreter = new ArgumentsInterpreter();
+
+      try
+      {
+        var args = new[] { "File1", "File1" };
+        interpreter.ProcessArguments(args);
+      }
+      catch (ArgumentValidationException e)
+      {
+        expectedException = e;
+      }
+      Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
+      var expectedMessage = "Each file to split must be unique.\r\n\r\n" +
+                            ArgumentsInterpreter.UsageMessage;
+      // ReSharper disable once PossibleNullReferenceException
+      Assert.AreEqual(expectedMessage, expectedException.Message);
     }
   }
 }
