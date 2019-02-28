@@ -48,6 +48,28 @@ namespace SplitPdf.UnitTests
     }
 
     [TestMethod]
+    public void ProcessArguments_PassingOnlyMergeArgument_Should_ThrowException()
+    {
+      ArgumentValidationException expectedException = null;
+
+      var interpreter = new ArgumentsInterpreter();
+
+      try
+      {
+        var args = new [] { "-m" };
+        interpreter.ProcessArguments(args);
+      }
+      catch (ArgumentValidationException e)
+      {
+        expectedException = e;
+      }
+      Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
+      var expectedMessage = $"Nothing to merge.\r\n\r\n{ArgumentsInterpreter.UsageMessage}";
+      // ReSharper disable once PossibleNullReferenceException
+      Assert.AreEqual(expectedMessage, expectedException.Message);
+    }
+
+    [TestMethod]
     public void ProcessArguments_PassSingleFileName_Should_PopulateFiles()
     {
       var interpreter = new ArgumentsInterpreter();

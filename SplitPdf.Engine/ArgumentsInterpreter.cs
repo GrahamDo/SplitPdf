@@ -20,6 +20,10 @@ namespace SplitPdf.Engine
     {
       if (arguments == null || arguments.Length == 0)
         ArgumentValidationException.ThrowWithUsageMessage();
+      // ReSharper disable once PossibleNullReferenceException
+      if (arguments[0].ToUpper() == "-M")
+        if (arguments.Length < 2)
+          ArgumentValidationException.ThrowWithUsageMessage("Nothing to merge.");
 
       InputFiles = new List<string>();
       // ReSharper disable once PossibleNullReferenceException
