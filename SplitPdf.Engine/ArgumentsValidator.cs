@@ -14,6 +14,10 @@ namespace SplitPdf.Engine
       => Validate(inputFiles, null);
     public void Validate(List<string> inputFiles, string outputPdf)
     {
+      if (inputFiles.Count < 1)
+        ArgumentValidationException.ThrowWithUsageMessage(
+          "Please pass at least one input file (two if merging).");
+
       if (!string.IsNullOrEmpty(outputPdf))
       {
         ThrowExceptionIfLessThan2InputFiles(inputFiles);

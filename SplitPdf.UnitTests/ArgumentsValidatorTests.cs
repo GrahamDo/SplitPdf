@@ -54,5 +54,27 @@ namespace SplitPdf.UnitTests
       Assert.AreEqual(expectedMessage, expectedException.Message);
     }
 
+    [TestMethod]
+    public void Validate_PassZeroInputFiles_Should_ThrowException()
+    {
+      ArgumentValidationException expectedException = null;
+
+      var validator = new ArgumentsValidator();
+
+      try
+      {
+        var inputFiles = new List<string>();
+        validator.Validate(inputFiles);
+      }
+      catch (ArgumentValidationException e)
+      {
+        expectedException = e;
+      }
+      Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
+      var expectedMessage = "Please pass at least one input file (two if merging).\r\n\r\n" +
+                            ArgumentsInterpreter.UsageMessage;
+      // ReSharper disable once PossibleNullReferenceException
+      Assert.AreEqual(expectedMessage, expectedException.Message);
+    }
   }
 }
