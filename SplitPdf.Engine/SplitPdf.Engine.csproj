@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArgumentsInterpreter.cs" />
+    <Compile Include="ArgumentsValidator.cs" />
     <Compile Include="ArgumentValidationException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

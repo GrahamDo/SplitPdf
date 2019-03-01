@@ -29,9 +29,6 @@ namespace SplitPdf.Engine
       {
         if (arguments.Length < 2)
           ArgumentValidationException.ThrowWithUsageMessage("Nothing to merge.");
-        if (arguments.Length < 4)
-          ArgumentValidationException.ThrowWithUsageMessage(
-            "Merge requires at least two input files and an output file.");
 
         IsMergeEnabled = true;
         firstFileNameIndex = 1;

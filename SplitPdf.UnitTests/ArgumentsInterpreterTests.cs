@@ -72,54 +72,6 @@ namespace SplitPdf.UnitTests
     }
 
     [TestMethod]
-    public void ProcessArguments_PassingMergeWithOnly1File_Should_ThrowException()
-    {
-      ArgumentValidationException expectedException = null;
-
-      var interpreter = new ArgumentsInterpreter();
-
-      try
-      {
-        var args = new[] {"-m", "File1"};
-        interpreter.ProcessArguments(args);
-      }
-      catch (ArgumentValidationException e)
-      {
-        expectedException = e;
-      }
-
-      Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
-      var expectedMessage = "Merge requires at least two input files and an output file.\r\n\r\n" +
-                            ArgumentsInterpreter.UsageMessage;
-      // ReSharper disable once PossibleNullReferenceException
-      Assert.AreEqual(expectedMessage, expectedException.Message);
-    }
-
-    [TestMethod]
-    public void ProcessArguments_PassingMergeWithOnly2Files_Should_ThrowException()
-    {
-      ArgumentValidationException expectedException = null;
-
-      var interpreter = new ArgumentsInterpreter();
-
-      try
-      {
-        var args = new[] {"-m", "File1", "File2"};
-        interpreter.ProcessArguments(args);
-      }
-      catch (ArgumentValidationException e)
-      {
-        expectedException = e;
-      }
-
-      Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
-      var expectedMessage = "Merge requires at least two input files and an output file.\r\n\r\n" +
-                            ArgumentsInterpreter.UsageMessage;
-      // ReSharper disable once PossibleNullReferenceException
-      Assert.AreEqual(expectedMessage, expectedException.Message);
-    }
-
-    [TestMethod]
     public void ProcessArguments_PassingMergeWithSameOutputFileAsInputFile_Should_ThrowException()
     {
       ArgumentValidationException expectedException = null;
