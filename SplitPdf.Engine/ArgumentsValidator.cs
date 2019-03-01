@@ -24,6 +24,7 @@ namespace SplitPdf.Engine
       {
         ThrowExceptionIfLessThan2InputFiles(inputFiles);
         ThrowExceptionIfInputFilesContainsOutputFile(inputFiles, mergeOutputFile);
+        ThrowExceptionIfMergeOutputFileExists(mergeOutputFile);
       }
       else
       {
@@ -44,6 +45,13 @@ namespace SplitPdf.Engine
       if (inputFiles.Contains(mergeOutputFile))
         ArgumentValidationException.ThrowWithUsageMessage("Merge output file cannot be the same " + 
                                                           "as one of the input files.");
+    }
+
+    private void ThrowExceptionIfMergeOutputFileExists(string mergeOutputFile)
+    {
+      if (File.Exists(mergeOutputFile))
+        ArgumentValidationException.ThrowWithUsageMessage(
+          $"Output file {mergeOutputFile} already exists, and will not be overwritten.");
     }
 
     private static void ThrowExceptionIfDuplicateInputFiles(ICollection<string> inputFiles)

@@ -147,5 +147,28 @@ namespace SplitPdf.UnitTests
       Assert.AreEqual(expectedMessage, expectedException.Message);
     }
 
+    [TestMethod]
+    public void Validate_PassingExistentMergeOutputFile_Should_ThrowException()
+    {
+      ArgumentValidationException expectedException = null;
+
+      var interpreter = new ArgumentsValidator();
+
+      try
+      {
+        var inputFiles = new List<string> { "PDF-File1.pdf", "PDF-File1.pdf" };
+        interpreter.Validate(inputFiles, "PDF-File2.pdf");
+      }
+      catch (ArgumentValidationException e)
+      {
+        expectedException = e;
+      }
+
+      Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
+      var expectedMessage = "Output file PDF-File2.pdf already exists, and will not be " + 
+                            $"overwritten.\r\n\r\n{ArgumentsInterpreter.UsageMessage}";
+      // ReSharper disable once PossibleNullReferenceException
+      Assert.AreEqual(expectedMessage, expectedException.Message);
+    }
   }
 }
