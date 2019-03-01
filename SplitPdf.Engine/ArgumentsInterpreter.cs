@@ -4,8 +4,8 @@ namespace SplitPdf.Engine
 {
   public class ArgumentsInterpreter
   {
-    public const string UsageMessage = "Usage\r\n:" +
-                                       "=====\r\n" +
+    public const string UsageMessage = "Usage:\r\n" +
+                                       "======\r\n" +
                                        "\r\n" +
                                        "Split a single PDF file into many:\r\n" +
                                        "\tSplitPdf.exe <File>\r\n" +

@@ -55,6 +55,12 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SplitPdf.Engine\SplitPdf.Engine.csproj">
+      <Project>{53740D81-616F-4A41-A403-C5239C9350FD}</Project>
+      <Name>SplitPdf.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
