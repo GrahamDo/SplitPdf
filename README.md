@@ -2,6 +2,8 @@ PdfSplit is a .NET console application for splitting PDF files into multiple fil
 
 Note: It was developed in Microsoft Visual Studio 2008 (although it currently needs Visual Studio 2017 to build), and targeting the .NET Framework 2.0. This is because the lady who I originally developed it for, to use at work, only has .NET 2.0 on her PC and the company policy didn't permit her to upgrade. Hence it needs to be left targetting that framework version.
 
+Note 2: Although the executable only requires the .NET Framework 2.0 to run, there is a Unit Test project in the solution. In order to execute tests in that project, you require .NET Framework 4.6.1 on your machine. This, of course, shouldn't be a problem if you're running it from within Visual Studio 2017.
+
 <h3>Usage</h3>
 <ul><li>Split a single PDF file into many:<br/>
   <code>SplitPdf.exe &lt;File&gt;</code></li>
