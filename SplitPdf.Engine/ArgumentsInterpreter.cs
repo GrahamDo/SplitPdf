@@ -38,9 +38,6 @@ namespace SplitPdf.Engine
       // ReSharper disable once PossibleNullReferenceException
       for (var i = firstFileNameIndex; i < arguments.Length; i++)
       {
-        if (!IsMergeEnabled && InputFiles.Contains(arguments[i]))
-          ArgumentValidationException.ThrowWithUsageMessage("Each file to split must be unique.");
-
         if (IsMergeEnabled && i == arguments.Length - 1)
           // Last argument is the Output File
           MergeOutputFile = arguments[i];

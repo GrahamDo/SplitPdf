@@ -30,5 +30,29 @@ namespace SplitPdf.UnitTests
       // ReSharper disable once PossibleNullReferenceException
       Assert.AreEqual(expectedMessage, expectedException.Message);
     }
+
+    [TestMethod]
+    public void Validate_PassDuplicateFileNamesWithoutMerge_Should_ThrowException()
+    {
+      ArgumentValidationException expectedException = null;
+
+      var validator = new ArgumentsValidator();
+
+      try
+      {
+        var inputFiles = new List<string> {"File1.pdf", "File1.pdf"};
+        validator.Validate(inputFiles);
+      }
+      catch (ArgumentValidationException e)
+      {
+        expectedException = e;
+      }
+      Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
+      var expectedMessage = "Each file to split must be unique.\r\n\r\n" +
+                            ArgumentsInterpreter.UsageMessage;
+      // ReSharper disable once PossibleNullReferenceException
+      Assert.AreEqual(expectedMessage, expectedException.Message);
+    }
+
   }
 }

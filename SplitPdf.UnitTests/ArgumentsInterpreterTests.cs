@@ -137,28 +137,5 @@ namespace SplitPdf.UnitTests
       Assert.AreEqual(interpreter.InputFiles[1], fileName2);
       Assert.AreEqual(interpreter.InputFiles[2], fileName3);
     }
-
-    [TestMethod]
-    public void ProcessArguments_PassDuplicateFileNamesWithoutMerge_Should_ThrowException()
-    {
-      ArgumentValidationException expectedException = null;
-
-      var interpreter = new ArgumentsInterpreter();
-
-      try
-      {
-        var args = new[] { "File1", "File1" };
-        interpreter.ProcessArguments(args);
-      }
-      catch (ArgumentValidationException e)
-      {
-        expectedException = e;
-      }
-      Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
-      var expectedMessage = "Each file to split must be unique.\r\n\r\n" +
-                            ArgumentsInterpreter.UsageMessage;
-      // ReSharper disable once PossibleNullReferenceException
-      Assert.AreEqual(expectedMessage, expectedException.Message);
-    }
   }
 }
