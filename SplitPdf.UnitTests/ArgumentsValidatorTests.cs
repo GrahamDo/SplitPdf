@@ -16,7 +16,7 @@ namespace SplitPdf.UnitTests
 
       try
       {
-        var inputFiles = new List<string> {"File1.pdf"};
+        var inputFiles = new List<string> { "PDF-File1.pdf" };
         validator.Validate(inputFiles, "output.pdf");
       }
       catch (ArgumentValidationException e)
@@ -40,7 +40,7 @@ namespace SplitPdf.UnitTests
 
       try
       {
-        var inputFiles = new List<string> {"File1.pdf", "File1.pdf"};
+        var inputFiles = new List<string> { "PDF-File1.pdf", "PDF-File1.pdf" };
         validator.Validate(inputFiles);
       }
       catch (ArgumentValidationException e)
@@ -100,7 +100,7 @@ namespace SplitPdf.UnitTests
     }
 
     [TestMethod]
-    public void ValidateArguments_PassingMergeWithSameOutputFileAsInputFile_Should_ThrowException()
+    public void Validate_PassingMergeWithSameOutputFileAsInputFile_Should_ThrowException()
     {
       ArgumentValidationException expectedException = null;
 
@@ -108,8 +108,8 @@ namespace SplitPdf.UnitTests
 
       try
       {
-        var inputFiles = new List<string> {"File1", "File2"};        
-        interpreter.Validate(inputFiles, "File1");
+        var inputFiles = new List<string> { "PDF-File1.pdf", "PDF-File2.pdf" };        
+        interpreter.Validate(inputFiles, "PDF-File1.pdf");
       }
       catch (ArgumentValidationException e)
       {
@@ -122,5 +122,30 @@ namespace SplitPdf.UnitTests
       // ReSharper disable once PossibleNullReferenceException
       Assert.AreEqual(expectedMessage, expectedException.Message);
     }
+
+    [TestMethod]
+    public void Validate_PassingNonExistentInputFile_Should_ThrowException()
+    {
+      ArgumentValidationException expectedException = null;
+
+      var interpreter = new ArgumentsValidator();
+
+      try
+      {
+        var inputFiles = new List<string> { "File1", "File2" };
+        interpreter.Validate(inputFiles);
+      }
+      catch (ArgumentValidationException e)
+      {
+        expectedException = e;
+      }
+
+      Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
+      var expectedMessage = "File not found: File1.\r\n\r\n" +
+                            ArgumentsInterpreter.UsageMessage;
+      // ReSharper disable once PossibleNullReferenceException
+      Assert.AreEqual(expectedMessage, expectedException.Message);
+    }
+
   }
 }

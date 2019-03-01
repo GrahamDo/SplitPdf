@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace SplitPdf.Engine
@@ -18,6 +19,7 @@ namespace SplitPdf.Engine
         ArgumentValidationException.ThrowWithUsageMessage(
           "Please pass at least one input file (two if merging).");
 
+      ThrowExceptionIfInputFilesNotFound(inputFiles);
       if (!string.IsNullOrEmpty(mergeOutputFile))
       {
         ThrowExceptionIfLessThan2InputFiles(inputFiles);
@@ -29,7 +31,14 @@ namespace SplitPdf.Engine
       }
     }
 
-    private void ThrowExceptionIfInputFilesContainsOutputFile(List<string> inputFiles, 
+    private void ThrowExceptionIfInputFilesNotFound(List<string> inputFiles)
+    {
+      foreach (var file in inputFiles)
+        if (!File.Exists(file))
+          ArgumentValidationException.ThrowWithUsageMessage($"File not found: {file}.");
+    }
+
+    private void ThrowExceptionIfInputFilesContainsOutputFile(ICollection<string> inputFiles, 
       string mergeOutputFile)
     {
       if (inputFiles.Contains(mergeOutputFile))
