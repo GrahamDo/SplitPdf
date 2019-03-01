@@ -3,6 +3,7 @@ using System.IO;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 using System.Collections.Generic;
+using SplitPdf.Engine;
 
 namespace SplitPdf
 {
@@ -10,58 +11,53 @@ namespace SplitPdf
   {
     private static void Main(string[] args)
     {
-      if (args.Length == 0)
+      var argumentsInterpreter = new ArgumentsInterpreter();
+      try
       {
-        Console.WriteLine("You must specify the input file as a parameter!");
+        argumentsInterpreter.ProcessArguments(args);
       }
-      else if (args[0].ToUpper() == "-M")
+      catch (ArgumentValidationException exception)
       {
-        if (args.Length < 4)
-        {
-          //-M Source1 Source2 Target
-          Console.WriteLine("You must specify at least two files to merge!");
-          return;
-        }
+        Console.WriteLine(exception.Message);
+        return;
+      }
 
-        var outputFile = args[args.Length - 1];
-        if (File.Exists(outputFile))
-        {
-          Console.WriteLine($"{outputFile} already exists! Will not overwrite it.");
-          return;
-        }
+      if (!CheckInputFilesExist(argumentsInterpreter.InputFiles))
+        return;
 
-        var files = new List<string>();
-        foreach (var arg in args)
-        {
-          if (arg.ToUpper() != "-M" && arg.ToUpper() != outputFile.ToUpper())
-            files.Add(arg);
-        }
-
-        var allFilesFound = true;
-        files.ForEach(s => 
-        {
-          if (File.Exists(s))
-              return;
-
-          Console.WriteLine($"File not found: {s}");
-          allFilesFound = false;
-        });
-
-        if (allFilesFound)
-          ConcatenatePdfs(files, outputFile);
+      if (argumentsInterpreter.IsMergeEnabled)
+      {
+        if (CheckOutputFileDoesNotExist(argumentsInterpreter.MergeOutputFile))
+          ConcatenatePdfs(argumentsInterpreter.InputFiles, argumentsInterpreter.MergeOutputFile);
       }
       else
-      {
-        foreach (var file in args)
-          if (!File.Exists(file))
-          {
-            Console.WriteLine($"File not found: {args[0]}");
-            return;
-          }
-
-        foreach (var file in args)
+        foreach (var file in argumentsInterpreter.InputFiles)
           SplitFile(file);
+
+    }
+
+    private static bool CheckOutputFileDoesNotExist(string outputFile)
+    {
+      if (!File.Exists(outputFile))
+        return true;
+
+      Console.WriteLine($"The output file you specified, {outputFile}, already exists.");
+      return false;
+
+    }
+
+    private static bool CheckInputFilesExist(IEnumerable<string> inputFiles)
+    {
+      foreach (var file in inputFiles)
+      {
+        if (File.Exists(file))
+          continue;
+
+        Console.WriteLine($"File not found: {file}");
+        return false;
       }
+
+      return true;
     }
 
     private static void ConcatenatePdfs(List<string> files, string outputFile)

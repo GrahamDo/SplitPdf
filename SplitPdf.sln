@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitPdf", "SplitPdf\SplitPdf.csproj", "{A7658897-1A2D-4126-A3BF-7D779697A41D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitPdf.Engine", "SplitPdf.Engine\SplitPdf.Engine.csproj", "{53740D81-616F-4A41-A403-C5239C9350FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitPdf.UnitTests", "SplitPdf.UnitTests\SplitPdf.UnitTests.csproj", "{B3F6467A-A6D3-4537-86DB-89D368939685}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A7658897-1A2D-4126-A3BF-7D779697A41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7658897-1A2D-4126-A3BF-7D779697A41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7658897-1A2D-4126-A3BF-7D779697A41D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53740D81-616F-4A41-A403-C5239C9350FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53740D81-616F-4A41-A403-C5239C9350FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53740D81-616F-4A41-A403-C5239C9350FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53740D81-616F-4A41-A403-C5239C9350FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3F6467A-A6D3-4537-86DB-89D368939685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F6467A-A6D3-4537-86DB-89D368939685}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3F6467A-A6D3-4537-86DB-89D368939685}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3F6467A-A6D3-4537-86DB-89D368939685}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
