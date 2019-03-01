@@ -12,20 +12,29 @@ namespace SplitPdf.Engine
   {
     public void Validate(List<string> inputFiles)
       => Validate(inputFiles, null);
-    public void Validate(List<string> inputFiles, string outputPdf)
+    public void Validate(List<string> inputFiles, string mergeOutputFile)
     {
       if (inputFiles == null || inputFiles.Count < 1)
         ArgumentValidationException.ThrowWithUsageMessage(
           "Please pass at least one input file (two if merging).");
 
-      if (!string.IsNullOrEmpty(outputPdf))
+      if (!string.IsNullOrEmpty(mergeOutputFile))
       {
         ThrowExceptionIfLessThan2InputFiles(inputFiles);
+        ThrowExceptionIfInputFilesContainsOutputFile(inputFiles, mergeOutputFile);
       }
       else
       {
         ThrowExceptionIfDuplicateInputFiles(inputFiles);
       }
+    }
+
+    private void ThrowExceptionIfInputFilesContainsOutputFile(List<string> inputFiles, 
+      string mergeOutputFile)
+    {
+      if (inputFiles.Contains(mergeOutputFile))
+        ArgumentValidationException.ThrowWithUsageMessage("Merge output file cannot be the same " + 
+                                                          "as one of the input files.");
     }
 
     private static void ThrowExceptionIfDuplicateInputFiles(ICollection<string> inputFiles)

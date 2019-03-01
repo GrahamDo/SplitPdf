@@ -98,5 +98,29 @@ namespace SplitPdf.UnitTests
       // ReSharper disable once PossibleNullReferenceException
       Assert.AreEqual(expectedMessage, expectedException.Message);
     }
+
+    [TestMethod]
+    public void ValidateArguments_PassingMergeWithSameOutputFileAsInputFile_Should_ThrowException()
+    {
+      ArgumentValidationException expectedException = null;
+
+      var interpreter = new ArgumentsValidator();
+
+      try
+      {
+        var inputFiles = new List<string> {"File1", "File2"};        
+        interpreter.Validate(inputFiles, "File1");
+      }
+      catch (ArgumentValidationException e)
+      {
+        expectedException = e;
+      }
+
+      Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
+      var expectedMessage = "Merge output file cannot be the same as one of the input files.\r\n\r\n" +
+                            ArgumentsInterpreter.UsageMessage;
+      // ReSharper disable once PossibleNullReferenceException
+      Assert.AreEqual(expectedMessage, expectedException.Message);
+    }
   }
 }
