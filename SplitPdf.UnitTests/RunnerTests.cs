@@ -15,7 +15,7 @@ namespace SplitPdf.UnitTests
 
       var inputFiles = new List<string> {"PDF-File1.pdf"};
       var runner = new Runner(new ArgumentsValidator());
-      runner.Progress += (sender, e) => { progressMessages.Add(e.ProgressMessage); };
+      runner.Progress += (sender, e) => progressMessages.Add(e.ProgressMessage);
       runner.Run(inputFiles);
 
       Assert.AreEqual(4, progressMessages.Count);
@@ -35,7 +35,7 @@ namespace SplitPdf.UnitTests
 
       var inputFiles = new List<string> { "PDF-File1.pdf", "PDF-File2.pdf" };
       var runner = new Runner(new ArgumentsValidator());
-      runner.Progress += (sender, e) => { progressMessages.Add(e.ProgressMessage); };
+      runner.Progress += (sender, e) => progressMessages.Add(e.ProgressMessage);
       runner.Run(inputFiles);
 
       Assert.AreEqual(8, progressMessages.Count);
@@ -64,7 +64,7 @@ namespace SplitPdf.UnitTests
       var inputFiles = new List<string> { "PDF-File1.pdf", "PDF-File2.pdf", "PDF-File3.pdf" };
       var outputFile = "output.pdf";
       var runner = new Runner(new ArgumentsValidator());
-      runner.Progress += (sender, e) => { progressMessages.Add(e.ProgressMessage); };
+      runner.Progress += (sender, e) => progressMessages.Add(e.ProgressMessage);
       runner.Run(inputFiles, outputFile);
 
       Assert.AreEqual(4, progressMessages.Count);
