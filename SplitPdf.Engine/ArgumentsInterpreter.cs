@@ -29,9 +29,6 @@ namespace SplitPdf.Engine
       {
         if (arguments.Length < 2)
           ArgumentValidationException.ThrowWithUsageMessage("Nothing to merge.");
-        if (arguments.Length < 4)
-          ArgumentValidationException.ThrowWithUsageMessage(
-            "Merge requires at least two input files and an output file.");
 
         IsMergeEnabled = true;
         firstFileNameIndex = 1;
@@ -41,9 +38,6 @@ namespace SplitPdf.Engine
       // ReSharper disable once PossibleNullReferenceException
       for (var i = firstFileNameIndex; i < arguments.Length; i++)
       {
-        if (!IsMergeEnabled && InputFiles.Contains(arguments[i]))
-          ArgumentValidationException.ThrowWithUsageMessage("Each file to split must be unique.");
-
         if (IsMergeEnabled && i == arguments.Length - 1)
           // Last argument is the Output File
           MergeOutputFile = arguments[i];
