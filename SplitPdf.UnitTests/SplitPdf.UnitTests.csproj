@@ -52,6 +52,7 @@
     <Compile Include="ArgumentsInterpreterTests.cs" />
     <Compile Include="ArgumentsValidatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunnerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
