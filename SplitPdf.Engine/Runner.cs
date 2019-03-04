@@ -22,8 +22,12 @@ namespace SplitPdf.Engine
     public void Run(List<string> inputFiles, string mergeOutputFile)
     {
       _argumentsValidator.Validate(inputFiles, mergeOutputFile);
-      foreach (var file in inputFiles)
-        DoSplit(file);
+
+      if (string.IsNullOrEmpty(mergeOutputFile))
+        foreach (var file in inputFiles)
+          DoSplit(file);
+      else
+        DoMerge(inputFiles, mergeOutputFile);
     }
 
     private void DoSplit(string file)
@@ -43,6 +47,31 @@ namespace SplitPdf.Engine
         outputDocument.AddPage(inputDocument.Pages[i]);
         outputDocument.Save($"{destFolder}\\{destFileNameFinal}");
       }
+    }
+
+    private void DoMerge(List<string> inputFiles, string mergeOutputFile)
+    {
+      var outputDocument = new PdfDocument();
+      inputFiles.ForEach(file =>
+      {
+        Progress?.Invoke(this, new RunnerProgressEventArgs
+        {
+          ProgressMessage = $"Processing {file}"
+        });
+        var inputDocument = PdfReader.Open(file, PdfDocumentOpenMode.Import);
+        var count = inputDocument.PageCount;
+        for (var idx = 0; idx < count; idx++)
+        {
+          var page = inputDocument.Pages[idx];
+          outputDocument.AddPage(page);
+        }
+      });
+      Progress?.Invoke(this, new RunnerProgressEventArgs
+      {
+        ProgressMessage = $"Creating output file {mergeOutputFile}"
+      });
+      outputDocument.Save(mergeOutputFile);
+
     }
   }
 }

@@ -55,5 +55,24 @@ namespace SplitPdf.UnitTests
         File.Delete(fileName);
       }
     }
+
+    [TestMethod]
+    public void Run_MergePdfFile1AndPdfFile2AndPdfFile3_Should_CreateOutputFile()
+    {
+      var progressMessages = new List<string>();
+
+      var inputFiles = new List<string> { "PDF-File1.pdf", "PDF-File2.pdf", "PDF-File3.pdf" };
+      var outputFile = "output.pdf";
+      var runner = new Runner(new ArgumentsValidator());
+      runner.Progress += (sender, e) => { progressMessages.Add(e.ProgressMessage); };
+      runner.Run(inputFiles, outputFile);
+
+      Assert.AreEqual(4, progressMessages.Count);
+      for (var i = 0; i < 3; i++)
+        Assert.AreEqual($"Processing {inputFiles[i]}", progressMessages[i]);
+      Assert.AreEqual($"Creating output file {outputFile}", progressMessages[3]);
+      Assert.IsTrue(File.Exists(outputFile), "Failed to create output file");
+      File.Delete(outputFile);
+    }
   }
 }
