@@ -58,5 +58,25 @@ namespace SplitPdf.UpgradeChecker
           elements[1]);
       }
     }
+
+    public bool IsUpgradeRequired(uint actualMajor, uint actualMinor, 
+      uint actualBuild, uint actualRevision, 
+      LatestVersionInfo versionInfo)
+    {
+      if (versionInfo.VersionMajor > actualMajor)
+        return true;
+      if (versionInfo.VersionMajor == actualMajor && 
+          versionInfo.VersionMinor > actualMinor)
+        return true;
+      if (versionInfo.VersionMajor == actualMajor &&
+          versionInfo.VersionMinor == actualMinor &&
+          versionInfo.VersionBuild > actualBuild)
+        return true;
+
+      return versionInfo.VersionMajor == actualMajor &&
+             versionInfo.VersionMinor == actualMinor &&
+             versionInfo.VersionBuild == actualBuild &&
+             versionInfo.VersionRevision > actualRevision;
+    }
   }
 }
