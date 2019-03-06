@@ -137,5 +137,15 @@ namespace SplitPdf.UnitTests
       // ReSharper disable once PossibleNullReferenceException
       Assert.AreEqual(expectedMessage, expectedException.Message);
     }
+
+    [TestMethod]
+    public void ProcessArguments_PassOnlyUC_Should_SetIsUpgradeCheckRequested()
+    {
+      var interpreter = new ArgumentsInterpreter();
+      var args = new[] { "-uc" };
+      interpreter.ProcessArguments(args);
+      Assert.IsTrue(interpreter.IsUpgradeCheckRequested, 
+        "Failed to set IsUpgradeCheckRequested");
+    }
   }
 }

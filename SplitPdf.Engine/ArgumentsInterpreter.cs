@@ -17,6 +17,7 @@ namespace SplitPdf.Engine
     public List<string> InputFiles { get; private set; }
     public bool IsMergeEnabled { get; private set; }
     public string MergeOutputFile { get; private set; }
+    public bool IsUpgradeCheckRequested { get; set; }
 
     public void ProcessArguments(string[] arguments)
     {
@@ -33,9 +34,14 @@ namespace SplitPdf.Engine
         IsMergeEnabled = true;
         firstFileNameIndex = 1;
       }
-      else if (arguments[0].ToUpper() == "-UC" && arguments.Length > 1)
-        ArgumentValidationException.ThrowWithUsageMessage(
-          "If passed, -uc must be the only argument.");
+      else if (arguments[0].ToUpper() == "-UC")
+      {
+        if (arguments.Length > 1)
+          ArgumentValidationException.ThrowWithUsageMessage(
+            "If passed, -uc must be the only argument.");
+
+        IsUpgradeCheckRequested = true;
+      }
 
       InputFiles = new List<string>();
       // ReSharper disable once PossibleNullReferenceException
