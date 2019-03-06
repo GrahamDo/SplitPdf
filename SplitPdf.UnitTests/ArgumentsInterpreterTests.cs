@@ -147,5 +147,19 @@ namespace SplitPdf.UnitTests
       Assert.IsTrue(interpreter.IsUpgradeCheckRequested, 
         "Failed to set IsUpgradeCheckRequested");
     }
+
+    [TestMethod]
+    public void ProcessArguments_PassOnlyUC_Should_StopInterpretingArguments()
+    {
+      var interpreter = new ArgumentsInterpreter();
+      var args = new[] { "-uc" };
+      interpreter.ProcessArguments(args);
+      Assert.IsFalse(interpreter.IsMergeEnabled,
+        "IsMergeEnabled should be false.");
+      Assert.IsNull(interpreter.InputFiles, 
+        "InputFiles should be null.");
+      Assert.IsNull(interpreter.MergeOutputFile,
+        "MergeOutputFile should be null.");
+    }
   }
 }

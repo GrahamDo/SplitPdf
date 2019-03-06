@@ -41,6 +41,7 @@ namespace SplitPdf.Engine
             "If passed, -uc must be the only argument.");
 
         IsUpgradeCheckRequested = true;
+        return;
       }
 
       InputFiles = new List<string>();
