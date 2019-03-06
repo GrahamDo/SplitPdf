@@ -23,7 +23,7 @@ namespace SplitPdf.UpgradeChecker
       return !File.Exists(fileName) ? DateTime.MinValue : DateTime.Parse(File.ReadAllText(fileName));
     }
 
-    private static void SetDateLastChecked()
+    public void SetDateLastChecked()
     {
       var path = Path.Combine(Environment.GetFolderPath(
         Environment.SpecialFolder.ApplicationData), "GrahamDo");
@@ -48,19 +48,18 @@ namespace SplitPdf.UpgradeChecker
 
         var elements = rawString.Split('|');
         var versionElements = elements[0].Split('.');
-        var major = Convert.ToUInt32(versionElements[0]);
-        var minor = Convert.ToUInt32(versionElements[1]);
-        var build = Convert.ToUInt32(versionElements[2]);
-        var revision = Convert.ToUInt32(versionElements[3]);
+        var major = Convert.ToInt32(versionElements[0]);
+        var minor = Convert.ToInt32(versionElements[1]);
+        var build = Convert.ToInt32(versionElements[2]);
+        var revision = Convert.ToInt32(versionElements[3]);
 
-        SetDateLastChecked();
         return new LatestVersionInfo(major, minor, build, revision,
           elements[1]);
       }
     }
 
-    public bool IsUpgradeRequired(uint actualMajor, uint actualMinor, 
-      uint actualBuild, uint actualRevision, 
+    public bool IsUpgradeRequired(int actualMajor, int actualMinor, 
+      int actualBuild, int actualRevision, 
       LatestVersionInfo versionInfo)
     {
       if (versionInfo.VersionMajor < actualMajor)

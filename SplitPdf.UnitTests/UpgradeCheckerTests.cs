@@ -39,7 +39,7 @@ namespace SplitPdf.UnitTests
       var versionInfo = checker.GetLatestVersionInfoFromUrl(
         "https://raw.githubusercontent.com/GrahamDo/SplitPdf/master/VERSION");
 
-      Assert.IsFalse(checker.IsUpgradeRequired(uint.MaxValue,
+      Assert.IsFalse(checker.IsUpgradeRequired(int.MaxValue,
           versionInfo.VersionMinor, versionInfo.VersionBuild,
           versionInfo.VersionRevision, versionInfo),
         "Failed to correctly identify that a new version is " +
@@ -54,7 +54,7 @@ namespace SplitPdf.UnitTests
         "https://raw.githubusercontent.com/GrahamDo/SplitPdf/master/VERSION");
 
       Assert.IsFalse(checker.IsUpgradeRequired(versionInfo.VersionMajor,
-          uint.MaxValue, versionInfo.VersionBuild,
+          int.MaxValue, versionInfo.VersionBuild,
           versionInfo.VersionRevision, versionInfo),
         "Failed to correctly identify that a new version is " +
         "NOT required.");
@@ -68,7 +68,7 @@ namespace SplitPdf.UnitTests
         "https://raw.githubusercontent.com/GrahamDo/SplitPdf/master/VERSION");
 
       Assert.IsFalse(checker.IsUpgradeRequired(versionInfo.VersionMajor,
-          versionInfo.VersionMinor, uint.MaxValue,
+          versionInfo.VersionMinor, int.MaxValue,
           versionInfo.VersionRevision, versionInfo),
         "Failed to correctly identify that a new version is " +
         "NOT required.");
@@ -83,7 +83,7 @@ namespace SplitPdf.UnitTests
 
       Assert.IsFalse(checker.IsUpgradeRequired(versionInfo.VersionMajor,
           versionInfo.VersionMinor, versionInfo.VersionBuild,
-          uint.MaxValue, versionInfo),
+          int.MaxValue, versionInfo),
         "Failed to correctly identify that a new version is " +
         "NOT required.");
     }

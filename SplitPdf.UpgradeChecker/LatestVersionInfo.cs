@@ -2,14 +2,17 @@
 {
   public class LatestVersionInfo
   {
-    public uint VersionMajor { get; }
-    public uint VersionMinor { get; }
-    public uint VersionBuild { get; }
-    public uint VersionRevision { get; }
+    public int VersionMajor { get; }
+    public int VersionMinor { get; }
+    public int VersionBuild { get; }
+    public int VersionRevision { get; }
+    public string VersionString =>
+      $"{VersionMajor}.{VersionMinor}.{VersionBuild}.{VersionRevision}";
+
     public string ReleaseUrl { get; }
 
-    public LatestVersionInfo(uint major, uint minor, uint build, 
-      uint revision, string releaseUrl)
+    public LatestVersionInfo(int major, int minor, int build, 
+      int revision, string releaseUrl)
     {
       VersionMajor = major;
       VersionMinor = minor;

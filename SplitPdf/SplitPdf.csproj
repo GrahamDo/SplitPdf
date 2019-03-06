@@ -54,6 +54,10 @@
       <Project>{53740D81-616F-4A41-A403-C5239C9350FD}</Project>
       <Name>SplitPdf.Engine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SplitPdf.UpgradeChecker\SplitPdf.UpgradeChecker.csproj">
+      <Project>{e5eae798-45b9-45ce-acf9-dd56455fa60f}</Project>
+      <Name>SplitPdf.UpgradeChecker</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

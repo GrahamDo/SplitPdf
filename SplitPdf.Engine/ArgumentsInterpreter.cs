@@ -17,7 +17,7 @@ namespace SplitPdf.Engine
     public List<string> InputFiles { get; private set; }
     public bool IsMergeEnabled { get; private set; }
     public string MergeOutputFile { get; private set; }
-    public bool IsUpgradeCheckRequested { get; set; }
+    public bool IsUpgradeCheckRequested { get; private set; }
 
     public void ProcessArguments(string[] arguments)
     {
