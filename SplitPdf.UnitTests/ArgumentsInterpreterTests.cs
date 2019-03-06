@@ -113,5 +113,29 @@ namespace SplitPdf.UnitTests
       Assert.AreEqual(interpreter.InputFiles[1], fileName2);
       Assert.AreEqual(interpreter.InputFiles[2], fileName3);
     }
+
+    [TestMethod]
+    public void ProcessArguments_PassingUCWithAnythingElse_Should_ThrowException()
+    {
+      ArgumentValidationException expectedException = null;
+
+      var interpreter = new ArgumentsInterpreter();
+
+      try
+      {
+        var args = new[] { "-uc", "dummyfile" };
+        interpreter.ProcessArguments(args);
+      }
+      catch (ArgumentValidationException e)
+      {
+        expectedException = e;
+      }
+
+      Assert.IsInstanceOfType(expectedException, typeof(ArgumentValidationException));
+      var expectedMessage = "If passed, -uc must be the only argument." + 
+                            $"\r\n\r\n{ArgumentsInterpreter.UsageMessage}";
+      // ReSharper disable once PossibleNullReferenceException
+      Assert.AreEqual(expectedMessage, expectedException.Message);
+    }
   }
 }

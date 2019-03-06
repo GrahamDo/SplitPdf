@@ -33,6 +33,9 @@ namespace SplitPdf.Engine
         IsMergeEnabled = true;
         firstFileNameIndex = 1;
       }
+      else if (arguments[0].ToUpper() == "-UC" && arguments.Length > 1)
+        ArgumentValidationException.ThrowWithUsageMessage(
+          "If passed, -uc must be the only argument.");
 
       InputFiles = new List<string>();
       // ReSharper disable once PossibleNullReferenceException
