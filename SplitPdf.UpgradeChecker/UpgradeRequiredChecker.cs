@@ -63,20 +63,28 @@ namespace SplitPdf.UpgradeChecker
       uint actualBuild, uint actualRevision, 
       LatestVersionInfo versionInfo)
     {
+      if (versionInfo.VersionMajor < actualMajor)
+        return false;
       if (versionInfo.VersionMajor > actualMajor)
         return true;
-      if (versionInfo.VersionMajor == actualMajor && 
-          versionInfo.VersionMinor > actualMinor)
-        return true;
-      if (versionInfo.VersionMajor == actualMajor &&
-          versionInfo.VersionMinor == actualMinor &&
-          versionInfo.VersionBuild > actualBuild)
-        return true;
+      if (versionInfo.VersionMajor != actualMajor)
+        return false;
 
-      return versionInfo.VersionMajor == actualMajor &&
-             versionInfo.VersionMinor == actualMinor &&
-             versionInfo.VersionBuild == actualBuild &&
-             versionInfo.VersionRevision > actualRevision;
+      if (versionInfo.VersionMinor < actualMinor)
+        return false;
+      if (versionInfo.VersionMinor > actualMinor)
+        return true;
+      if (versionInfo.VersionMinor != actualMinor)
+        return false;
+
+      if (versionInfo.VersionBuild < actualBuild)
+        return false;
+      if (versionInfo.VersionBuild > actualBuild)
+        return true;
+      if (versionInfo.VersionBuild == actualBuild)
+        return versionInfo.VersionRevision > actualRevision;
+
+      return false;
     }
   }
 }
