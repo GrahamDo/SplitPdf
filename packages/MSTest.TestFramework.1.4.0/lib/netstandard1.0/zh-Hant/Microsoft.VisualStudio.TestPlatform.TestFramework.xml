@@ -2375,7 +2375,7 @@
             預期符合下者的字串: <paramref name="pattern"/>。
             </param>
             <param name="pattern">
-            規則運算式，<paramref name="value"/>
+            規則運算式，<paramref name="value"/> 
             預期相符。
             </param>
             <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
@@ -2392,7 +2392,7 @@
             預期符合下者的字串: <paramref name="pattern"/>。
             </param>
             <param name="pattern">
-            規則運算式，<paramref name="value"/>
+            規則運算式，<paramref name="value"/> 
             預期相符。
             </param>
             <param name="message">
@@ -2414,7 +2414,7 @@
             預期符合下者的字串: <paramref name="pattern"/>。
             </param>
             <param name="pattern">
-            規則運算式，<paramref name="value"/>
+            規則運算式，<paramref name="value"/> 
             預期相符。
             </param>
             <param name="message">
@@ -2439,7 +2439,7 @@
             預期不符合下者的字串: <paramref name="pattern"/>。
             </param>
             <param name="pattern">
-            規則運算式，<paramref name="value"/>
+            規則運算式，<paramref name="value"/> 
             預期不相符。
             </param>
             <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
@@ -2455,7 +2455,7 @@
             預期不符合下者的字串: <paramref name="pattern"/>。
             </param>
             <param name="pattern">
-            規則運算式，<paramref name="value"/>
+            規則運算式，<paramref name="value"/> 
             預期不相符。
             </param>
             <param name="message">
@@ -2476,7 +2476,7 @@
             預期不符合下者的字串: <paramref name="pattern"/>。
             </param>
             <param name="pattern">
-            規則運算式，<paramref name="value"/>
+            規則運算式，<paramref name="value"/> 
             預期不相符。
             </param>
             <param name="message">
@@ -4163,7 +4163,7 @@
              <summary>
              取得用來存取資料來源的方法。
              </summary>
-
+            
              <returns>
              下列其中之一:<see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/> 值。如果 <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/> 未進行初始化，則這會傳回預設值 <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>。
              </returns>

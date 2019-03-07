@@ -25,7 +25,7 @@
         </member>
         <member name="M:Microsoft.VisualStudio.TestTools.UnitTesting.DeploymentItemAttribute.#ctor(System.String,System.String)">
             <summary>
-            Инициализирует новый экземпляр класса <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DeploymentItemAttribute"/>
+            Инициализирует новый экземпляр класса <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DeploymentItemAttribute"/> 
             </summary>
             <param name="path">Относительный или абсолютный путь к файлу или каталогу для развертывания. Этот путь задается относительно выходного каталога сборки. Элемент будет скопирован в тот же каталог, что и развернутые сборки теста.</param>
             <param name="outputDirectory">Путь к каталогу, в который должны быть скопированы элементы. Он может быть абсолютным или относительным (по отношению к каталогу развертывания). Все файлы и каталоги, обозначенные при помощи <paramref name="path"/> будет скопировано в этот каталог.</param>

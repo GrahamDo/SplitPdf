@@ -3072,7 +3072,7 @@
             <summary>
             Verifica se le due raccolte specificate sono uguali e genera un'eccezione
             se sono diverse. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="expected">
@@ -3091,7 +3091,7 @@
             <summary>
             Verifica se le due raccolte specificate sono uguali e genera un'eccezione
             se sono diverse. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="expected">
@@ -3115,7 +3115,7 @@
             <summary>
             Verifica se le due raccolte specificate sono uguali e genera un'eccezione
             se sono diverse. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="expected">
@@ -3142,7 +3142,7 @@
             <summary>
             Verifica se le due raccolte specificate sono diverse e genera un'eccezione
             se sono uguali. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="notExpected">
@@ -3161,7 +3161,7 @@
             <summary>
             Verifica se le due raccolte specificate sono diverse e genera un'eccezione
             se sono uguali. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="notExpected">
@@ -3185,7 +3185,7 @@
             <summary>
             Verifica se le due raccolte specificate sono diverse e genera un'eccezione
             se sono uguali. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="notExpected">
@@ -3212,7 +3212,7 @@
             <summary>
             Verifica se le due raccolte specificate sono uguali e genera un'eccezione
             se sono diverse. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="expected">
@@ -3234,7 +3234,7 @@
             <summary>
             Verifica se le due raccolte specificate sono uguali e genera un'eccezione
             se sono diverse. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="expected">
@@ -3261,7 +3261,7 @@
             <summary>
             Verifica se le due raccolte specificate sono uguali e genera un'eccezione
             se sono diverse. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="expected">
@@ -3291,7 +3291,7 @@
             <summary>
             Verifica se le due raccolte specificate sono diverse e genera un'eccezione
             se sono uguali. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="notExpected">
@@ -3313,7 +3313,7 @@
             <summary>
             Verifica se le due raccolte specificate sono diverse e genera un'eccezione
             se sono uguali. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="notExpected">
@@ -3340,7 +3340,7 @@
             <summary>
             Verifica se le due raccolte specificate sono diverse e genera un'eccezione
             se sono uguali. Per uguaglianza si intende che le raccolte
-            contengono gli stessi elementi nello stesso ordine e nella stessa quantità.
+            contengono gli stessi elementi nello stesso ordine e nella stessa quantità. 
             Riferimenti diversi allo stesso valore vengono considerati uguali.
             </summary>
             <param name="notExpected">
@@ -3680,7 +3680,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorConstructorNotFound">
             <summary>
-              Cerca una stringa localizzata simile a
+              Cerca una stringa localizzata simile a 
                  Il costruttore con la firma specificata non è stato trovato. Potrebbe essere necessario rigenerare la funzione di accesso privata
       oppure il membro potrebbe essere privato e definito per una classe di base. In quest'ultimo caso, è necessario passare il tipo
       che definisce il membro nel costruttore di PrivateObject.
@@ -3689,7 +3689,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
             <summary>
-              Cerca una stringa localizzata simile a
+              Cerca una stringa localizzata simile a 
                  Il membro specificato ({0}) non è stato trovato. Potrebbe essere necessario rigenerare la funzione di accesso privata
       oppure il membro potrebbe essere privato e definito per una classe di base. In quest'ultimo caso, è necessario passare il tipo
       che definisce il membro nel costruttore di PrivateObject.
@@ -3792,7 +3792,7 @@
         </member>
         <member name="M:Microsoft.VisualStudio.TestTools.UnitTesting.UtfHelper.GetExceptionMsg(System.Exception)">
             <summary>
-            Ottiene i messaggi di eccezione in modo ricorsivo, inclusi quelli relativi a
+            Ottiene i messaggi di eccezione in modo ricorsivo, inclusi quelli relativi a 
             tutte le eccezioni interne
             </summary>
             <param name="ex">Eccezione per cui ottenere i messaggi</param>
@@ -4116,7 +4116,7 @@
             <param name="connectionString">
             Stringa di connessione specifica del provider di dati.
             AVVISO: la stringa di connessione può contenere dati sensibili, ad esempio una password.
-            La stringa di connessione è archiviata in formato testo normale nel codice sorgente e nell'assembly compilato.
+            La stringa di connessione è archiviata in formato testo normale nel codice sorgente e nell'assembly compilato. 
             Limitare l'accesso al codice sorgente e all'assembly per proteggere questi dati sensibili.
             </param>
             <param name="tableName">Nome della tabella dati.</param>
@@ -4130,7 +4130,7 @@
             <param name="connectionString">
             Stringa di connessione specifica del provider di dati.
             AVVISO: la stringa di connessione può contenere dati sensibili, ad esempio una password.
-            La stringa di connessione è archiviata in formato testo normale nel codice sorgente e nell'assembly compilato.
+            La stringa di connessione è archiviata in formato testo normale nel codice sorgente e nell'assembly compilato. 
             Limitare l'accesso al codice sorgente e all'assembly per proteggere questi dati sensibili.
             </param>
             <param name="tableName">Nome della tabella dati.</param>
@@ -4163,7 +4163,7 @@
              <summary>
              Ottiene il metodo usato per accedere all'origine dati.
              </summary>
-
+            
              <returns>
              Uno dei valori di <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/> . Se <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/> non è inizializzato, restituirà il valore predefinito <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>.
              </returns>

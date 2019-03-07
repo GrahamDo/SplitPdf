@@ -3851,7 +3851,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorConstructorNotFound">
             <summary>
-              Looks up a localized string similar to
+              Looks up a localized string similar to 
                  The constructor with the specified signature could not be found. You might need to regenerate your private accessor,
                  or the member may be private and defined on a base class. If the latter is true, you need to pass the type
                  that defines the member into PrivateObject&apos;s constructor.
@@ -3860,7 +3860,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
             <summary>
-              Looks up a localized string similar to
+              Looks up a localized string similar to 
                  The member specified ({0}) could not be found. You might need to regenerate your private accessor,
                  or the member may be private and defined on a base class. If the latter is true, you need to pass the type
                  that defines the member into PrivateObject&apos;s constructor.
@@ -4377,7 +4377,7 @@
              <summary>
              Gets the method used to access the data source.
              </summary>
-
+            
              <returns>
              One of the <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/> values. If the <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/> is not initialized, this will return the default value <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>.
              </returns>

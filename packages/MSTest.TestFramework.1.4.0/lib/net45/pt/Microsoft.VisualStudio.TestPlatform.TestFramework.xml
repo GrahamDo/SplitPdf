@@ -3680,7 +3680,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorConstructorNotFound">
             <summary>
-              Pesquisa uma cadeia de caracteres localizada semelhante a
+              Pesquisa uma cadeia de caracteres localizada semelhante a 
                  O construtor com a assinatura especificada não pôde ser encontrado. Talvez seja necessário gerar novamente seu acessador particular
                  ou o membro pode ser particular e definido em uma classe base. Se o último for verdadeiro, será necessário passar o tipo
                  que define o membro no construtor do PrivateObject.
@@ -3689,7 +3689,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
             <summary>
-              Pesquisa uma cadeia de caracteres localizada semelhante a
+              Pesquisa uma cadeia de caracteres localizada semelhante a 
                  O membro especificado ({0}) não pôde ser encontrado. Talvez seja necessário gerar novamente seu acessador particular
                  ou o membro pode ser particular e definido em uma classe base. Se o último for verdadeiro, será necessário passar o tipo
                  que define o membro no construtor do PrivateObject.
@@ -4114,9 +4114,9 @@
             </summary>
             <param name="providerInvariantName">Nome do provedor de dados invariável, como System.Data.SqlClient</param>
             <param name="connectionString">
-            Cadeia de conexão específica do provedor de dados.
+            Cadeia de conexão específica do provedor de dados. 
             AVISO: a cadeia de conexão pode conter dados confidenciais (por exemplo, uma senha).
-            A cadeia de conexão é armazenada em texto sem formatação no código-fonte e no assembly compilado.
+            A cadeia de conexão é armazenada em texto sem formatação no código-fonte e no assembly compilado. 
             Restrinja o acesso ao código-fonte e ao assembly para proteger essas formações confidenciais.
             </param>
             <param name="tableName">O nome da tabela de dados.</param>
@@ -4128,9 +4128,9 @@
             Especifique a cadeia de conexão e a tabela de dados para acessar a fonte de dados OLEDB.
             </summary>
             <param name="connectionString">
-            Cadeia de conexão específica do provedor de dados.
+            Cadeia de conexão específica do provedor de dados. 
             AVISO: a cadeia de conexão pode conter dados confidenciais (por exemplo, uma senha).
-            A cadeia de conexão é armazenada em texto sem formatação no código-fonte e no assembly compilado.
+            A cadeia de conexão é armazenada em texto sem formatação no código-fonte e no assembly compilado. 
             Restrinja o acesso ao código-fonte e ao assembly para proteger essas formações confidenciais.
             </param>
             <param name="tableName">O nome da tabela de dados.</param>
@@ -4163,7 +4163,7 @@
              <summary>
              Obtém o método usado para acessar a fonte de dados.
              </summary>
-
+            
              <returns>
              Um dos <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/> valores. Se o <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/> não for inicializado, o valor padrão será retornado <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>.
              </returns>

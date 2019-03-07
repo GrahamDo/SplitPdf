@@ -1101,7 +1101,7 @@
             </param>
             <param name="message">
             다음과 같은 경우 예외에 포함할 메시지: <paramref name="actual"/>
-            과(와)<paramref name="expected"/>의 차이가 다음보다 큰 경우:
+            과(와)<paramref name="expected"/>의 차이가 다음보다 큰 경우: 
             <paramref name="delta"/>. 메시지가 테스트 결과에 표시됩니다.
             </param>
             <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
@@ -1127,7 +1127,7 @@
             </param>
             <param name="message">
             다음과 같은 경우 예외에 포함할 메시지: <paramref name="actual"/>
-            과(와)<paramref name="expected"/>의 차이가 다음보다 큰 경우:
+            과(와)<paramref name="expected"/>의 차이가 다음보다 큰 경우: 
             <paramref name="delta"/>. 메시지가 테스트 결과에 표시됩니다.
             </param>
             <param name="parameters">
@@ -1253,7 +1253,7 @@
             </param>
             <param name="message">
             다음과 같은 경우 예외에 포함할 메시지: <paramref name="actual"/>
-            과(와)<paramref name="expected"/>의 차이가 다음보다 큰 경우:
+            과(와)<paramref name="expected"/>의 차이가 다음보다 큰 경우: 
             <paramref name="delta"/>. 메시지가 테스트 결과에 표시됩니다.
             </param>
             <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
@@ -1278,7 +1278,7 @@
             </param>
             <param name="message">
             다음과 같은 경우 예외에 포함할 메시지: <paramref name="actual"/>
-            과(와)<paramref name="expected"/>의 차이가 다음보다 큰 경우:
+            과(와)<paramref name="expected"/>의 차이가 다음보다 큰 경우: 
             <paramref name="delta"/>. 메시지가 테스트 결과에 표시됩니다.
             </param>
             <param name="parameters">
@@ -2061,7 +2061,7 @@
         </member>
         <member name="M:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.ThrowsExceptionAsync``1(System.Func{System.Threading.Tasks.Task},System.String)">
             <summary>
-            <paramref name="action"/> 대리자가 지정한 코드가 <typeparamref name="T"/> 형식의 정확한 특정 예외(파생된 형식이 아님)를 throw하는지 테스트하고
+            <paramref name="action"/> 대리자가 지정한 코드가 <typeparamref name="T"/> 형식의 정확한 특정 예외(파생된 형식이 아님)를 throw하는지 테스트하고 
             코드가 예외를 throw하지 않거나 <typeparamref name="T"/>이(가) 아닌 형식의 예외를 throw하는 경우 <code>AssertFailedException</code>을 throw합니다.
             </summary>
             <param name="action">테스트할 코드 및 예외를 throw할 것으로 예상되는 코드에 대한 대리자.</param>
@@ -2079,7 +2079,7 @@
         </member>
         <member name="M:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.ThrowsExceptionAsync``1(System.Func{System.Threading.Tasks.Task},System.String,System.Object[])">
             <summary>
-            <paramref name="action"/> 대리자가 지정한 코드가 <typeparamref name="T"/> 형식의 정확한 특정 예외(파생된 형식이 아님)를 throw하는지 테스트하고
+            <paramref name="action"/> 대리자가 지정한 코드가 <typeparamref name="T"/> 형식의 정확한 특정 예외(파생된 형식이 아님)를 throw하는지 테스트하고 
             코드가 예외를 throw하지 않거나 <typeparamref name="T"/>이(가) 아닌 형식의 예외를 throw하는 경우 <code>AssertFailedException</code>을 throw합니다.
             </summary>
             <param name="action">테스트할 코드 및 예외를 throw할 것으로 예상되는 코드에 대한 대리자.</param>
@@ -2760,7 +2760,7 @@
             다음의 상위 집합일 것으로 예상되는 컬렉션: <paramref name="subset"/>
             </param>
             <param name="message">
-
+            
             <paramref name="subset"/>의 요소가 다음에서 발견되지 않는 경우 예외에 포함할 메시지입니다.<paramref name="superset"/>.
             테스트 결과에 메시지가 표시됩니다.
             </param>
@@ -2782,7 +2782,7 @@
             다음의 상위 집합일 것으로 예상되는 컬렉션: <paramref name="subset"/>
             </param>
             <param name="message">
-
+            
             <paramref name="subset"/>의 모든 요소가 다음에서 발견되지 않는 경우 예외에 포함할 메시지: <paramref name="superset"/>.
             테스트 결과에 메시지가 표시됩니다.
             </param>
@@ -2824,7 +2824,7 @@
             다음의 상위 집합일 것으로 예상되지 않는 컬렉션: <paramref name="subset"/>
             </param>
             <param name="message">
-
+            
             <paramref name="subset"/>의 모든 요소가 다음에서도 발견되는 경우 예외에 포함할 메시지: <paramref name="superset"/>.
             테스트 결과에 메시지가 표시됩니다.
             </param>
@@ -2846,7 +2846,7 @@
             다음의 상위 집합일 것으로 예상되지 않는 컬렉션: <paramref name="subset"/>
             </param>
             <param name="message">
-
+            
             <paramref name="subset"/>의 모든 요소가 다음에서도 발견되는 경우 예외에 포함할 메시지: <paramref name="superset"/>.
             테스트 결과에 메시지가 표시됩니다.
             </param>
@@ -3031,7 +3031,7 @@
             다음의 각 요소의 예상 형식: <paramref name="collection"/>.
             </param>
             <param name="message">
-
+            
             <paramref name="collection"/>의 요소가 다음의 인스턴스가 아닌 경우 예외에 포함할 메시지:
             <paramref name="expectedType"/>. 메시지가 테스트 결과에 표시됩니다.
             </param>
@@ -3055,7 +3055,7 @@
             다음의 각 요소의 예상 형식: <paramref name="collection"/>.
             </param>
             <param name="message">
-
+            
             <paramref name="collection"/>의 요소가 다음의 인스턴스가 아닌 경우 예외에 포함할 메시지:
             <paramref name="expectedType"/>. 메시지가 테스트 결과에 표시됩니다.
             </param>
@@ -3684,7 +3684,7 @@
                  [지정한 시그니처를 가진 생성자를 찾을 수 없습니다. 전용 접근자를 다시 생성해야 할 수 있습니다.
                  또는 멤버가 기본 클래스에 정의된 전용 멤버일 수 있습니다. 기본 클래스에 정의된 전용 멤버인 경우에는 이 멤버를 정의하는 형식을
                  PrivateObject의 생성자에 전달해야 합니다.]
-
+               
             </summary>
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
@@ -3693,7 +3693,7 @@
                  [지정한 멤버({0})를 찾을 수 없습니다. 전용 접근자를 다시 생성해야 할 수 있습니다.
                  또는 멤버가 기본 클래스에 정의된 전용 멤버일 수 있습니다. 기본 클래스에 정의된 전용 멤버인 경우에는 이 멤버를 정의하는 형식을
                  PrivateObject의 생성자에 전달해야 합니다.]
-
+               
             </summary>
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.StartsWithFail">
@@ -4114,9 +4114,9 @@
             </summary>
             <param name="providerInvariantName">고정 데이터 공급자 이름(예: System.Data.SqlClient)</param>
             <param name="connectionString">
-            데이터 공급자별 연결 문자열.
+            데이터 공급자별 연결 문자열. 
             경고: 연결 문자열에는 중요한 데이터(예: 암호)가 포함될 수 있습니다.
-            연결 문자열은 소스 코드와 컴파일된 어셈블리에 일반 텍스트로 저장됩니다.
+            연결 문자열은 소스 코드와 컴파일된 어셈블리에 일반 텍스트로 저장됩니다. 
             이 중요한 정보를 보호하려면 소스 코드 및 어셈블리에 대한 액세스를 제한하세요.
             </param>
             <param name="tableName">데이터 테이블의 이름.</param>
@@ -4128,9 +4128,9 @@
             OLEDB 데이터 소스에 액세스하기 위한 연결 문자열 및 데이터 테이블을 지정하세요.
             </summary>
             <param name="connectionString">
-            데이터 공급자별 연결 문자열.
+            데이터 공급자별 연결 문자열. 
             경고: 연결 문자열에는 중요한 데이터(예: 암호)가 포함될 수 있습니다.
-            연결 문자열은 소스 코드와 컴파일된 어셈블리에 일반 텍스트로 저장됩니다.
+            연결 문자열은 소스 코드와 컴파일된 어셈블리에 일반 텍스트로 저장됩니다. 
             이 중요한 정보를 보호하려면 소스 코드 및 어셈블리에 대한 액세스를 제한하세요.
             </param>
             <param name="tableName">데이터 테이블의 이름.</param>
@@ -4163,7 +4163,7 @@
              <summary>
              데이터 소스에 액세스하는 데 사용되는 메서드를 가져옵니다.
              </summary>
-
+            
              <returns>
               <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/> 값 중 하나입니다. <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/>이(가) 초기화되지 않은 경우 다음 기본값이 반환됩니다. <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>.
             </returns>

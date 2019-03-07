@@ -1876,7 +1876,7 @@
             <summary>
             Las sobrecargas de igualdad estáticas se usan para comparar la igualdad de referencia de
             instancias de dos tipos. Este método <b>no</b> debe usarse para comparar la igualdad de dos instancias.
-            Este objeto se devolverá <b>siempre</b> con Assert.Fail. Utilice
+            Este objeto se devolverá <b>siempre</b> con Assert.Fail. Utilice 
             Assert.AreEqual y las sobrecargas asociadas en pruebas unitarias.
             </summary>
             <param name="objA"> Objeto A </param>
@@ -3680,7 +3680,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorConstructorNotFound">
             <summary>
-              Busca una cadena traducida similar a
+              Busca una cadena traducida similar a 
                  "No se encontró el constructor con la signatura especificada. Es posible que tenga que regenerar el descriptor de acceso privado,
                  o que el miembro sea privado y esté definido en una clase base. Si se trata de esto último, debe pasar el tipo
                  que define el miembro al constructor de PrivateObject".
@@ -3688,7 +3688,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
             <summary>
-              Busca una cadena traducida similar a
+              Busca una cadena traducida similar a 
                  "No se encontró el miembro especificado ({0}). Es posible que tenga que regenerar el descriptor de acceso privado,
                  o que el miembro sea privado y esté definido en una clase base. Si se trata de esto último, debe pasar el tipo
                  que define el miembro al constructor de PrivateObject".
@@ -4112,9 +4112,9 @@
             </summary>
             <param name="providerInvariantName">Nombre invariable del proveedor de datos, como System.Data.SqlClient</param>
             <param name="connectionString">
-            Cadena de conexión específica del proveedor de datos.
+            Cadena de conexión específica del proveedor de datos. 
             ADVERTENCIA: La cadena de conexión puede contener información confidencial (por ejemplo, una contraseña).
-            La cadena de conexión se almacena en texto sin formato en el código fuente y en el ensamblado compilado.
+            La cadena de conexión se almacena en texto sin formato en el código fuente y en el ensamblado compilado. 
             Restrinja el acceso al código fuente y al ensamblado para proteger esta información confidencial.
             </param>
             <param name="tableName">Nombre de la tabla de datos.</param>
@@ -4126,9 +4126,9 @@
             Especifique la cadena de conexión y la tabla de datos para acceder al origen de datos OLEDB.
             </summary>
             <param name="connectionString">
-            Cadena de conexión específica del proveedor de datos.
+            Cadena de conexión específica del proveedor de datos. 
             ADVERTENCIA: La cadena de conexión puede contener información confidencial (por ejemplo, una contraseña).
-            La cadena de conexión se almacena en texto sin formato en el código fuente y en el ensamblado compilado.
+            La cadena de conexión se almacena en texto sin formato en el código fuente y en el ensamblado compilado. 
             Restrinja el acceso al código fuente y al ensamblado para proteger esta información confidencial.
             </param>
             <param name="tableName">Nombre de la tabla de datos.</param>
@@ -4161,7 +4161,7 @@
              <summary>
              Obtiene el método usado para tener acceso al origen de datos.
             </summary>
-
+            
              <returns>
              Uno de los<see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/> . Si <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/> no se ha inicializado, devolverá el valor predeterminado <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>.
              </returns>

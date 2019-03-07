@@ -304,7 +304,7 @@
             此类旨在帮助用户使用泛型类型为类型执行单元测试。
             GenericParameterHelper 满足某些常见的泛型类型限制，
             如:
-            1.公共默认构造函数
+            1.公共默认构造函数 
             2.实现公共接口: IComparable,IEnumerable
             </summary>
         </member>
@@ -3689,7 +3689,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
             <summary>
-              查找类似于
+              查找类似于 
                  “找不到指定成员({0})。可能需要重新生成专用访问器，
                  或者成员可能为专用且在基类上进行了定义。如果后者为 true，则需将定义成员的类型
                  传递到 PrivateObject 的构造函数中。”
@@ -3736,7 +3736,7 @@
                查找类似于“引发异常 {2}，但预期为异常 {1}。{0}
             异常消息: {3}
             堆栈跟踪: {4}”的已本地化字符串。
-             </summary>
+             </summary> 
         </member>
         <member name="T:Microsoft.VisualStudio.TestTools.UnitTesting.UnitTestOutcome">
             <summary>
@@ -4163,7 +4163,7 @@
              <summary>
             获取用于访问数据源的方法。
              </summary>
-
+            
              <returns>
              其中一个 <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/>值。如果 <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/>未初始化，这将返回默认值<see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>。
             </returns>

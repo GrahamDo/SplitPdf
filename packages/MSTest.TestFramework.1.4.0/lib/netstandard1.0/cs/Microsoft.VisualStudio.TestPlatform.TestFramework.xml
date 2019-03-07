@@ -3676,20 +3676,20 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorConstructorNotFound">
             <summary>
-              Vyhledá lokalizovaný řetězec podobný řetězci
+              Vyhledá lokalizovaný řetězec podobný řetězci 
                  Konstruktor se zadaným podpisem se nenašel. Pravděpodobně budete muset obnovit privátní přístupový objekt,
                  nebo je člen pravděpodobně privátní a založený na základní třídě. Pokud je pravdivý druhý zmíněný případ, musíte vložit typ
                  definující člen do konstruktoru objektu PrivateObject.
-
+               
             </summary>
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
             <summary>
-              Vyhledá lokalizovaný řetězec podobný řetězci
+              Vyhledá lokalizovaný řetězec podobný řetězci 
                  Zadaný člen ({0}) se nenašel. Pravděpodobně budete muset obnovit privátní přístupový objekt,
                  nebo je člen pravděpodobně privátní a založený na základní třídě. Pokud je pravdivý druhý zmíněný případ, musíte vložit typ
                  definující člen do konstruktoru atributu PrivateObject.
-
+               
             </summary>
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.StartsWithFail">
@@ -4159,7 +4159,7 @@
              <summary>
              Získá metodu používanou pro přístup ke zdroji dat.
              </summary>
-
+            
              <returns>
              Jedna z těchto položek: <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/>. Pokud <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/> není inicializován, vrátí výchozí hodnotu <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>.
              </returns>

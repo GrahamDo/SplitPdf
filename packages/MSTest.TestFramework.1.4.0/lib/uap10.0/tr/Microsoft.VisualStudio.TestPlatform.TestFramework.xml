@@ -286,7 +286,7 @@
             <summary>
             Özel durumun beklenip beklenmediğini belirler. Metot dönüş yapıyorsa, özel
             durumun beklendiği anlaşılır. Metot bir özel durum oluşturuyorsa, özel durumun
-            beklenmediği anlaşılır ve oluşturulan özel durumun iletisi test sonucuna
+            beklenmediği anlaşılır ve oluşturulan özel durumun iletisi test sonucuna 
             eklenir. Kolaylık sağlamak amacıyla <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.Assert"/> sınıfı kullanılabilir.
             <see cref="M:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.Inconclusive"/> kullanılırsa ve onaylama başarısız olursa,
             test sonucu Belirsiz olarak ayarlanır.
@@ -1670,8 +1670,8 @@
         </member>
         <member name="M:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsInstanceOfType(System.Object,System.Type)">
             <summary>
-            Belirtilen nesnenin beklenen türde bir örnek olup olmadığını test eder ve
-            beklenen tür, nesnenin devralma hiyerarşisinde değilse
+            Belirtilen nesnenin beklenen türde bir örnek olup olmadığını test eder ve 
+            beklenen tür, nesnenin devralma hiyerarşisinde değilse 
             bir özel durum oluşturur.
             </summary>
             <param name="value">
@@ -1688,8 +1688,8 @@
         </member>
         <member name="M:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsInstanceOfType(System.Object,System.Type,System.String)">
             <summary>
-            Belirtilen nesnenin beklenen türde bir örnek olup olmadığını test eder ve
-            beklenen tür, nesnenin devralma hiyerarşisinde değilse
+            Belirtilen nesnenin beklenen türde bir örnek olup olmadığını test eder ve 
+            beklenen tür, nesnenin devralma hiyerarşisinde değilse 
             bir özel durum oluşturur.
             </summary>
             <param name="value">
@@ -1711,8 +1711,8 @@
         </member>
         <member name="M:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsInstanceOfType(System.Object,System.Type,System.String,System.Object[])">
             <summary>
-            Belirtilen nesnenin beklenen türde bir örnek olup olmadığını test eder ve
-            beklenen tür, nesnenin devralma hiyerarşisinde değilse
+            Belirtilen nesnenin beklenen türde bir örnek olup olmadığını test eder ve 
+            beklenen tür, nesnenin devralma hiyerarşisinde değilse 
             bir özel durum oluşturur.
             </summary>
             <param name="value">
@@ -3680,7 +3680,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorConstructorNotFound">
             <summary>
-              Şuna benzer bir yerelleştirilmiş dize arar:
+              Şuna benzer bir yerelleştirilmiş dize arar: 
                  Belirtilen imzaya sahip oluşturucu bulunamadı. Özel erişimcinizi yeniden oluşturmanız gerekebilir
                  veya üye özel ve bir temel sınıfta tanımlanmış olabilir. İkinci durum geçerliyse üyeyi
                  tanımlayan türü PrivateObject oluşturucusuna geçirmeniz gerekir.
@@ -3689,7 +3689,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
             <summary>
-              Şuna benzer bir yerelleştirilmiş dize arar:
+              Şuna benzer bir yerelleştirilmiş dize arar: 
                  Belirtilen üye ({0}) bulunamadı. Özel erişimcinizi yeniden oluşturmanız gerekebilir
                  veya üye özel ve bir temel sınıfta tanımlanmış olabilir. İkinci durum geçerliyse üyeyi tanımlayan türü
                  PrivateObject oluşturucusuna geçirmeniz gerekir.
@@ -4116,7 +4116,7 @@
             <param name="connectionString">
             Veri sağlayıcısına özgü bağlantı dizesi.
             UYARI: Bağlantı dizesi, hassas veriler (parola gibi) içerebilir.
-            Bağlantı dizesi, kaynak kodunda ve derlenmiş bütünleştirilmiş kodda düz metin olarak depolanır.
+            Bağlantı dizesi, kaynak kodunda ve derlenmiş bütünleştirilmiş kodda düz metin olarak depolanır. 
             Bu hassas bilgileri korumak için kaynak koda ve bütünleştirilmiş koda erişimi kısıtlayın.
             </param>
             <param name="tableName">Veri tablosunun adı.</param>
@@ -4130,7 +4130,7 @@
             <param name="connectionString">
             Veri sağlayıcısına özgü bağlantı dizesi.
             UYARI: Bağlantı dizesi, hassas veriler (parola gibi) içerebilir.
-            Bağlantı dizesi, kaynak kodunda ve derlenmiş bütünleştirilmiş kodda düz metin olarak depolanır.
+            Bağlantı dizesi, kaynak kodunda ve derlenmiş bütünleştirilmiş kodda düz metin olarak depolanır. 
             Bu hassas bilgileri korumak için kaynak koda ve bütünleştirilmiş koda erişimi kısıtlayın.
             </param>
             <param name="tableName">Veri tablosunun adı.</param>
@@ -4163,7 +4163,7 @@
              <summary>
              Veri kaynağına erişmek için kullanılan metodu alır.
              </summary>
-
+            
              <returns>
              Bir <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/> değerlerdir. Eğer <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/> başlatılmazsa, varsayılan değeri döndürür <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>.
             </returns>

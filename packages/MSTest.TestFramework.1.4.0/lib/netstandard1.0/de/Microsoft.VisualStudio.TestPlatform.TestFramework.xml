@@ -3680,7 +3680,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorConstructorNotFound">
             <summary>
-              Schlägt eine lokalisierte Zeichenfolge ähnlich
+              Schlägt eine lokalisierte Zeichenfolge ähnlich 
                  "Der Konstruktor mit der angegebenen Signatur wurde nicht gefunden. Möglicherweise müssen Sie Ihren privaten Accessor erneut generieren,
                  oder der Member ist ggf. privat und für eine Basisklasse definiert. Wenn Letzteres zutrifft, müssen Sie den Typ an den
                  Konstruktor von PrivateObject übergeben, der den Member definiert." nach.
@@ -3689,7 +3689,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
             <summary>
-              Schlägt eine lokalisierte Zeichenfolge ähnlich
+              Schlägt eine lokalisierte Zeichenfolge ähnlich 
                  "Der angegebene Member ({0}) wurde nicht gefunden. Möglicherweise müssen Sie Ihren privaten Accessor erneut generieren,
                  oder der Member ist ggf. privat und für eine Basisklasse definiert. Wenn Letzteres zutrifft, müssen Sie den Typ an den
                  Konstruktor von PrivateObject übergeben, der den Member definiert." nach.
@@ -4163,7 +4163,7 @@
              <summary>
             Ruft die Methode ab, die für den Zugriff auf die Datenquelle verwendet wird.
             </summary>
-
+            
              <returns>
              Einer der<see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/>-Werte. Wenn das <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/> nicht initialisiert wurde, wird der Standardwert zurückgegeben. <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>.
             </returns>
