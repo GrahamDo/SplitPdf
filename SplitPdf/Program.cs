@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Threading;
 using SplitPdf.Engine;
 using SplitPdf.UpgradeChecker;
 
@@ -27,9 +28,12 @@ namespace SplitPdf
           runner.Progress += (sender, e) => Console.WriteLine(e.ProgressMessage);
           runner.Run(argumentsInterpreter.InputFiles, argumentsInterpreter.MergeOutputFile);
 
+          if (Settings.Default.DaysBetweenUpgradeCheck == -1)
+            return;
+
           var lastChecked = upgradeChecker.GetLastChecked();
           doUpgradeCheck =
-            DateTime.Now.Subtract(lastChecked).TotalDays >= 14;
+            DateTime.Now.Subtract(lastChecked).TotalDays >= Settings.Default.DaysBetweenUpgradeCheck;
         }
 
         if (doUpgradeCheck)
@@ -46,8 +50,7 @@ namespace SplitPdf
     {
       Console.WriteLine();
       Console.WriteLine("Checking for upgrades...");
-      var versionInfo = upgradeChecker.GetLatestVersionInfoFromUrl(
-        "https://raw.githubusercontent.com/GrahamDo/SplitPdf/master/VERSION");
+      var versionInfo = upgradeChecker.GetLatestVersionInfoFromUrl(Settings.Default.UpgradeCheckUrl);
       var currentVersion = Assembly.GetExecutingAssembly().GetName()
         .Version;
       var isRequired = upgradeChecker.IsUpgradeRequired(currentVersion.Major, currentVersion.Minor,
@@ -70,8 +73,9 @@ namespace SplitPdf
       Console.WriteLine("\tFor more info, visit: " + 
                         versionInfo.ReleaseUrl);
       Console.WriteLine();
-      Console.Write("Press <ENTER> to continue...");
-      Console.ReadLine();
+      Console.WriteLine("Left unattended, the application will terminate after " + 
+                        $"{Settings.Default.SecondsDelayAfterFindingUpgrades} seconds...");
+      Thread.Sleep(Settings.Default.SecondsDelayAfterFindingUpgrades * 1000);
     }
   }
 }
