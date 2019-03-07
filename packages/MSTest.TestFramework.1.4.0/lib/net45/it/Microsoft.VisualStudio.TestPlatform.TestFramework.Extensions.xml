@@ -617,7 +617,7 @@
         </member>
         <member name="M:Microsoft.VisualStudio.TestTools.UnitTesting.PrivateType.#ctor(System.Type)">
             <summary>
-            Inizializza una nuova istanza della classe <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.PrivateType"/> che contiene
+            Inizializza una nuova istanza della classe <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.PrivateType"/> che contiene 
             il tipo privato dell'oggetto tipo
             </summary>
             <param name="type">Oggetto Type con wrapping da creare.</param>

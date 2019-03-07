@@ -3680,7 +3680,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorConstructorNotFound">
             <summary>
-              Recherche une chaîne localisée semblable à celle-ci :
+              Recherche une chaîne localisée semblable à celle-ci : 
                  Le constructeur doté de la signature spécifiée est introuvable. Vous devrez peut-être régénérer votre accesseur private,
                  ou le membre est peut-être private et défini sur une classe de base. Si le dernier cas est vrai, vous devez transmettre le type
                  qui définit le membre dans le constructeur de PrivateObject.
@@ -3689,7 +3689,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
             <summary>
-              Recherche une chaîne localisée semblable à celle-ci :
+              Recherche une chaîne localisée semblable à celle-ci : 
                  Le membre spécifié ({0}) est introuvable. Vous devrez peut-être régénérer votre accesseur private,
                  ou le membre est peut-être private et défini sur une classe de base. Si le dernier cas est vrai, vous devez transmettre le type
                  qui définit le membre dans le constructeur de PrivateObject.
@@ -4163,7 +4163,7 @@
              <summary>
              Obtient la méthode utilisée pour accéder à la source de données.
              </summary>
-
+            
              <returns>
              Une des valeurs <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/> possibles. Si <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/> n'est pas initialisé, ce qui entraîne le retour de la valeur par défaut <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>.
              </returns>

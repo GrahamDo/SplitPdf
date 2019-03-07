@@ -364,7 +364,7 @@
         </member>
         <member name="M:Microsoft.VisualStudio.TestTools.UnitTesting.GenericParameterHelper.Clone">
             <summary>
-            現在のオブジェクトに相当する GenericParameterHelper
+            現在のオブジェクトに相当する GenericParameterHelper 
             オブジェクトを返します。
             </summary>
             <returns>複製されたオブジェクト。</returns>
@@ -3427,7 +3427,7 @@
             0 です。
             </param>
             <param name="mismatchedElement">
-            一致しない要素 (null の場合があります)、または一致しない要素がない場合は
+            一致しない要素 (null の場合があります)、または一致しない要素がない場合は 
             null です。
             </param>
             <returns>
@@ -3684,16 +3684,16 @@
                  プライベート アクセサーを再生成しなければならないか、
                  またはメンバーがプライベートであり、基底クラスで定義されている可能性があります。後者である場合、メンバーを
                  PrivateObject のコンストラクターに定義する型を渡す必要があります。" に類似したローカライズされた文字列を検索します。
-
+               
             </summary>
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
             <summary>
               "指定されたメンバー ({0}) が見つかりませんでした。プライベート アクセサーを再生成しなければならないか、
                  またはメンバーがプライベートであり、基底クラスで定義されている可能性があります。後者である場合、メンバーを
-                 定義する型を PrivateObject のコンストラクターに渡す必要があります。"
+                 定義する型を PrivateObject のコンストラクターに渡す必要があります。" 
                  に類似したローカライズされた文字列を検索します。
-
+               
             </summary>
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.StartsWithFail">
@@ -4163,7 +4163,7 @@
              <summary>
              データ ソースへのアクセスに使用するメソッドを取得します。
              </summary>
-
+            
              <returns>
              次のいずれか<see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/> 値。以下の場合 <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/> 初期化されていない場合は、これは既定値を返します <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>。
             </returns>

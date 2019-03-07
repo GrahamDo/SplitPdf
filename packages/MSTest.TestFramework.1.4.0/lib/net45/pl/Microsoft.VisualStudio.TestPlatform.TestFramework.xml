@@ -319,7 +319,7 @@
         </member>
         <member name="M:Microsoft.VisualStudio.TestTools.UnitTesting.GenericParameterHelper.#ctor(System.Int32)">
             <summary>
-            Inicjuje nowe wystąpienie klasy <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.GenericParameterHelper"/>, które
+            Inicjuje nowe wystąpienie klasy <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.GenericParameterHelper"/>, które 
             inicjuje właściwość Data wartością dostarczoną przez użytkownika.
             </summary>
             <param name="data">Dowolna liczba całkowita</param>
@@ -3680,7 +3680,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorConstructorNotFound">
             <summary>
-              Wyszukuje zlokalizowany ciąg podobny do następującego:
+              Wyszukuje zlokalizowany ciąg podobny do następującego: 
                  Nie można odnaleźć konstruktora z określoną sygnaturą. Może być konieczne ponowne wygenerowanie prywatnej metody dostępu
                  lub element członkowski może być zdefiniowany jako prywatny w klasie podstawowej. W drugim przypadku należy przekazać typ,
                  który definiuje element członkowski w konstruktorze obiektu PrivateObject.
@@ -3689,7 +3689,7 @@
         </member>
         <member name="P:Microsoft.VisualStudio.TestTools.UnitTesting.FrameworkMessages.PrivateAccessorMemberNotFound">
             <summary>
-              Wyszukuje zlokalizowany ciąg podobny do następującego:
+              Wyszukuje zlokalizowany ciąg podobny do następującego: 
                  Nie można odnaleźć określonego elementu członkowskiego ({0}). Może być konieczne ponowne wygenerowanie prywatnej metody dostępu
                  lub element członkowski może być zdefiniowany jako prywatny w klasie podstawowej. W drugim przypadku należy przekazać typ,
                  który definiuje element członkowski w konstruktorze obiektu PrivateObject.
@@ -4114,7 +4114,7 @@
             </summary>
             <param name="providerInvariantName">Niezmienna nazwa dostawcy danych, taka jak System.Data.SqlClient</param>
             <param name="connectionString">
-            Parametry połączenia specyficzne dla dostawcy danych.
+            Parametry połączenia specyficzne dla dostawcy danych. 
             OSTRZEŻENIE: parametry połączenia mogą zawierać poufne dane (na przykład hasło).
             Parametry połączenia są przechowywane w postaci zwykłego tekstu w kodzie źródłowym i w skompilowanym zestawie.
             Należy ograniczyć dostęp do kodu źródłowego i zestawu, aby chronić te poufne informacje.
@@ -4128,7 +4128,7 @@
             Określ parametry połączenia i tabelę danych w celu uzyskania dostępu do źródła danych OLEDB.
             </summary>
             <param name="connectionString">
-            Parametry połączenia specyficzne dla dostawcy danych.
+            Parametry połączenia specyficzne dla dostawcy danych. 
             OSTRZEŻENIE: parametry połączenia mogą zawierać poufne dane (na przykład hasło).
             Parametry połączenia są przechowywane w postaci zwykłego tekstu w kodzie źródłowym i w skompilowanym zestawie.
             Należy ograniczyć dostęp do kodu źródłowego i zestawu, aby chronić te poufne informacje.
@@ -4163,7 +4163,7 @@
              <summary>
             Pobiera metodę używaną do uzyskiwania dostępu do źródła danych.
              </summary>
-
+            
              <returns>
             Jedna z <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod"/>. Jeśli nie zainicjowano <see cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.DataSourceAttribute"/>, zwróci wartość domyślną <see cref="F:Microsoft.VisualStudio.TestTools.UnitTesting.DataAccessMethod.Random"/>.
             </returns>
