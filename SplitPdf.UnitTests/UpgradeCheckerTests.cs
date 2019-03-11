@@ -89,6 +89,20 @@ namespace SplitPdf.UnitTests
     }
 
     [TestMethod]
+    public void IsUpgradeRequired_Should_ReturnFalseForSameVersionNumber()
+    {
+      var checker = new UpgradeRequiredChecker();
+      var versionInfo = checker.GetLatestVersionInfoFromUrl(
+        "https://raw.githubusercontent.com/GrahamDo/SplitPdf/master/VERSION");
+
+      Assert.IsFalse(checker.IsUpgradeRequired(versionInfo.VersionMajor,
+          versionInfo.VersionMinor, versionInfo.VersionBuild,
+          versionInfo.VersionRevision, versionInfo),
+        "Failed to correctly identify that a new version is " +
+        "NOT required.");
+    }
+
+    [TestMethod]
     public void IsUpgradeRequired_Should_ReturnTrueForLowerMajorVersionNumber()
     {
       var checker = new UpgradeRequiredChecker();
