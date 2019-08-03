@@ -47,6 +47,7 @@
     <Compile Include="ArgumentsInterpreter.cs" />
     <Compile Include="ArgumentsValidator.cs" />
     <Compile Include="ArgumentValidationException.cs" />
+    <Compile Include="EncryptedPdfException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Runner.cs" />
     <Compile Include="RunnerProgressEventArgs.cs" />

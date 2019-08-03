@@ -32,7 +32,7 @@ namespace SplitPdf.Engine
 
     private void DoSplit(string file)
     {
-      var inputDocument = PdfReader.Open(file, PdfDocumentOpenMode.Import);
+      var inputDocument = OpenPdfFile(file);
       var destFolder = Path.GetDirectoryName(inputDocument.FullPath);
       var destFileName = Path.GetFileNameWithoutExtension(file);
       var destFileExtension = Path.GetExtension(file);
@@ -46,6 +46,22 @@ namespace SplitPdf.Engine
         var outputDocument = new PdfDocument { Version = inputDocument.Version };
         outputDocument.AddPage(inputDocument.Pages[i]);
         outputDocument.Save($"{destFolder}\\{destFileNameFinal}");
+      }
+    }
+
+    private PdfDocument OpenPdfFile(string file)
+    {
+      try
+      {
+        return PdfReader.Open(file, PdfDocumentOpenMode.Import);
+      }
+      catch (PdfReaderException exception)
+      {
+        if (exception.Message != "The PDF document is protected with an encryption not " + 
+                                 "supported by PDFsharp.")
+          throw;
+
+        throw new EncryptedPdfException(file);
       }
     }
 
