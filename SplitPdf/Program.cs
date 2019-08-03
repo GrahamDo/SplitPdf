@@ -25,8 +25,7 @@ namespace SplitPdf
           // If it's time for a check, but it wasn't specifically 
           // requested by the user, we should still run (and validate
           // args) first.
-          runner.Progress += (sender, e) => Console.WriteLine(e.ProgressMessage);
-          runner.Run(argumentsInterpreter.InputFiles, argumentsInterpreter.MergeOutputFile);
+          Run(runner, argumentsInterpreter);
 
           if (Settings.Default.DaysBetweenUpgradeCheck == -1)
             return;
@@ -40,6 +39,19 @@ namespace SplitPdf
           CheckForUpgrades(upgradeChecker);
       }
       catch (ArgumentValidationException exception)
+      {
+        Console.WriteLine(exception.Message);
+      }
+    }
+
+    private static void Run(Runner runner, ArgumentsInterpreter argumentsInterpreter)
+    {
+      try
+      {
+        runner.Progress += (sender, e) => Console.WriteLine(e.ProgressMessage);
+        runner.Run(argumentsInterpreter.InputFiles, argumentsInterpreter.MergeOutputFile);
+      }
+      catch (EncryptedPdfException exception)
       {
         Console.WriteLine(exception.Message);
       }
