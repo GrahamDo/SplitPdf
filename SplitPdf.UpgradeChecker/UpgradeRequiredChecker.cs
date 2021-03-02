@@ -44,6 +44,8 @@ namespace SplitPdf.UpgradeChecker
     {
       using (var client = new WebClient())
       {
+        ServicePointManager.Expect100Continue = true;
+        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
         var rawString = client.DownloadString(url);
 
         var elements = rawString.Split('|');
