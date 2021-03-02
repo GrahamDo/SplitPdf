@@ -1,8 +1,8 @@
 PdfSplit is a .NET console application for splitting PDF files into multiple files. Pass a PDF file to this app on the command line (or drag a PDF file onto the executable in Windows Explorer), and it will be split into multiple documents, one document per page.
 
-Note: It was developed in Microsoft Visual Studio 2008 (although it currently needs Visual Studio 2017 to build), and targeting the .NET Framework 3.5. This is because the lady who I originally developed it for, to use at work, only has .NET 3.5 on her PC and the company policy didn't permit her to upgrade. Hence it needs to be left targetting that framework version.
+Note: It was developed in Microsoft Visual Studio 2008 (although it currently needs Visual Studio 2017 to build), and targetting the .NET Framework 4.5. This is because the lady who I originally developed it for, to use at work, only has .NET 4.5 on her PC and the company policy didn't permit her to upgrade. Hence it needs to be left targetting that framework version.
 
-Note 2: Although the executable only requires the .NET Framework 3.5 to run, there is a Unit Test project in the solution. In order to execute tests in that project, you require .NET Framework 4.6.1 on your machine. This, of course, shouldn't be a problem if you're running it from within Visual Studio 2017.
+Note 2: Although the executable only requires the .NET Framework 4.5 to run, there is a Unit Test project in the solution. In order to execute tests in that project, you require .NET Framework 4.6.1 on your machine. This, of course, shouldn't be a problem if you're running it from within Visual Studio 2017 or higher.
 
 <h3>Usage</h3>
 <ul><li>Split a single PDF file into many:<br/>
